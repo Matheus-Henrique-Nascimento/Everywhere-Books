@@ -48,6 +48,8 @@ body{
     background-color: $cor-primária;
 }
 
+/* --- Código básico. */
+
 /* --- Cabeçalho. */
 
 header{
@@ -195,6 +197,42 @@ header{
             #header-pesquisa-perfil{
                 display: none;
             }
+        }
+    }
+}
+
+/* --- Cabeçalho. */
+
+/* --- Corpo. */
+
+#main-botões-gerais{
+    @include flex-em-linha();
+    position: absolute;
+    right: 32px;
+    top: 116px;
+    width: 240px;
+
+    span{
+        background-color: $cor-terceária;
+        border-radius: 50%;
+        color: $cor-quaternária;
+        cursor: pointer;
+        font-size: $tipografia-ícone-tamanho;
+        font-weight: $tipografia-ícone-peso;
+        padding: 8px;
+    }
+
+    #main-botões-interruptor{
+        background-color: $cor-terceária;
+        border-radius: 100px;
+        padding: 8px;
+
+        span{
+            margin-left: 40px;
+        }
+        span:first-child{
+            margin-left: 0px;
+            background-color: $cor-primária;
         }
     }
 }
