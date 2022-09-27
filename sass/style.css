@@ -1,17 +1,22 @@
 @charset "UTF-8";
-/* --- Informações Básicas. */
+/* --- Informações básicas. */
 /* ------ Cores. */
 /* ------ Tipografia. */
-/* --- Código. */
+/* ------ @mixins. */
+/* --- Código básico. */
 body {
   background-color: #D7CCC8;
 }
 
+/* --- Cabeçalho. */
 header {
+  /* --- Cabeçalho geral. */
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding: 16px 32px;
+  /* --- Logo. */
+  /* --- Separação em duas sessões: a endereços e a pesquisa-perfil. */
 }
 header #header-logo h1 {
   color: #171717;
@@ -23,6 +28,8 @@ header #header-endereços-pesquisa-perfil {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  /* --- Endereços. */
+  /* --- Pesquisa-perfil. */
 }
 header #header-endereços-pesquisa-perfil #header-endereços ul {
   align-items: center;
@@ -73,7 +80,6 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil #header-área-
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button {
   background: none;
   border: #171717 solid 1px;
-  color: #171717;
   margin-left: 16px;
   padding: 16px 40px 16px 16px;
   position: relative;
