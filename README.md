@@ -1,6 +1,6 @@
 # Everywhere Books
 
-Link do site [link to the website]: https://matheus-henrique-nascimento.github.io/Everywhere-Books/
+Link para o site [link to the website]: https://matheus-henrique-nascimento.github.io/Everywhere-Books/
 
 pt-br:
 
