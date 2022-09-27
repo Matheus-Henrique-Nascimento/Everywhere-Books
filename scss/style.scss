@@ -58,7 +58,6 @@ header{
 
     @include flex-em-linha();
     border-bottom: solid 1px $cor-quaternária;
-    height: 100px;
     padding: 16px 32px;
 
     /* --- Logo. */
@@ -205,11 +204,17 @@ header{
 
 /* --- Corpo. */
 
+main{
+    position: relative;
+}
+
+/* --- Botões gerais. */
+
 #main-botões-gerais{
     @include flex-em-linha();
     position: absolute;
     right: 32px;
-    top: 116px;
+    top: 16px;
     width: 240px;
 
     span{
