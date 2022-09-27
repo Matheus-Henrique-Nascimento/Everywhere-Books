@@ -113,7 +113,9 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
     display: none;
   }
   header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva {
+    align-items: center;
     display: flex;
+    justify-content: space-between;
   }
   header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li {
     margin-left: 16px;

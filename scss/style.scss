@@ -172,7 +172,7 @@ header{
                 }
 
                 #header-endereços-organização-responsiva{
-                    display: flex;
+                    @include flex-em-linha();
 
                     li{
                         margin-left: 16px;
