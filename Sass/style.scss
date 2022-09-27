@@ -1,3 +1,49 @@
+/* --- Informações básicas: variáveis. */
+
+/* ------ Cores. */
+
+$cor-primária: #D7CCC8;
+$cor-secundária: #A69B97;
+$cor-terceária: #FFFFFB;
+$cor-quaternária: #171717;
+$cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
+
+/* ------ Tipografia. */
+
+$tipografia-logo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-logo-tamanho: 24px;
+$tipografia-logo-peso: bold;
+
+$tipografia-endereços-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-endereços-tamanho: 12px;
+$tipografia-endereços-peso: initial;
+
+
+$tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-placeholder-tamanho: 12px;
+$tipografia-placeholder-peso: initial;
+
+$tipografia-botão-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-botão-tamanho: 12px;
+$tipografia-botão-peso: initial;
+
+$tipografia-ícone-tamanho: 20px;
+$tipografia-ícone-peso: initial;
+
+/* ------ @mixins. */
+
+@mixin flex-em-linha{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* --- Código básico. */
+
+body{
+    background-color: $cor-primária;
+}
+
 /* --- Cabeçalho. */
 
 header{
@@ -82,9 +128,9 @@ header{
                 background: none;
                 border: #171717 solid 1px;
                 color: $cor-quaternária;
-                $tipografia-botão-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                $tipografia-botão-tamanho: 12px;
-                $tipografia-botão-peso: initial;
+                font-family: $tipografia-botão-família;
+                font-size: $tipografia-botão-tamanho;
+                font-weight: $tipografia-botão-peso;
                 margin-left: 16px;
                 padding: 16px 40px 16px 16px;
                 position: relative;
