@@ -2,6 +2,7 @@
 /* --- Informações básicas: variáveis. */
 /* ------ Cores. */
 /* ------ Tipografia. */
+/* ------ Resonsividade. */
 /* ------ @mixins. */
 /* --- Código básico. */
 body {
@@ -10,10 +11,12 @@ body {
 
 /* --- Cabeçalho. */
 header {
-  /* --- Cabeçalho geral. */
+  /* --- Cabeçalho padrão. */
   align-items: center;
   display: flex;
   justify-content: space-between;
+  border-bottom: solid 1px #171717;
+  height: 100px;
   padding: 16px 32px;
   /* --- Logo. */
   /* --- Separação em duas sessões: a endereços e a pesquisa-perfil. */
@@ -31,22 +34,25 @@ header #header-endereços-pesquisa-perfil {
   /* --- Endereços. */
   /* --- Pesquisa-perfil. */
 }
-header #header-endereços-pesquisa-perfil #header-endereços ul {
+header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
-header #header-endereços-pesquisa-perfil #header-endereços ul li {
+header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão li {
   margin-left: 16px;
 }
-header #header-endereços-pesquisa-perfil #header-endereços ul li a {
+header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão li a {
   color: #171717;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: initial;
 }
-header #header-endereços-pesquisa-perfil #header-endereços ul li:first-child {
+header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão li:first-child {
   margin-left: 0px;
+}
+header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva {
+  display: none;
 }
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil {
   align-items: center;
@@ -96,4 +102,31 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
   right: 0px;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* --- Responsividade do cabeçalho. */
+@media only screen and (max-width: 1000px) {
+  header #header-endereços-pesquisa-perfil {
+    display: block;
+  }
+  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão {
+    display: none;
+  }
+  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva {
+    display: flex;
+  }
+  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li {
+    margin-left: 16px;
+  }
+  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li a span {
+    color: #171717;
+    font-size: 20px;
+    font-weight: initial;
+  }
+  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li:first-child {
+    margin-left: 0px;
+  }
+  header #header-endereços-pesquisa-perfil #header-pesquisa-perfil {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

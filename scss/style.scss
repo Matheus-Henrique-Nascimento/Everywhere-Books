@@ -30,6 +30,10 @@ $tipografia-botão-peso: initial;
 $tipografia-ícone-tamanho: 20px;
 $tipografia-ícone-peso: initial;
 
+/* ------ Resonsividade. */
+
+$responsividade-média: 1000px;
+
 /* ------ @mixins. */
 
 @mixin flex-em-linha{
@@ -48,9 +52,11 @@ body{
 
 header{
 
-    /* --- Cabeçalho geral. */
+    /* --- Cabeçalho padrão. */
 
     @include flex-em-linha();
+    border-bottom: solid 1px $cor-quaternária;
+    height: 100px;
     padding: 16px 32px;
 
     /* --- Logo. */
@@ -72,7 +78,7 @@ header{
         /* --- Endereços. */
 
         #header-endereços{
-            ul{
+            #header-endereços-organização-padrão{
                 @include flex-em-linha();
 
                 li{
@@ -89,6 +95,10 @@ header{
                 li:first-child{
                     margin-left: 0px;
                 }
+            }
+
+            #header-endereços-organização-responsiva{
+                display: none
             }
         }
 
@@ -144,6 +154,46 @@ header{
                     top: 50%;
                     transform: translate(-50%, -50%);
                 }
+            }
+        }
+    }
+}
+
+/* --- Responsividade do cabeçalho. */
+
+@media only screen and (max-width: $responsividade-média){
+    header{
+        #header-endereços-pesquisa-perfil{
+            display: block;
+
+            #header-endereços{
+                #header-endereços-organização-padrão{
+                    display: none;
+                }
+
+                #header-endereços-organização-responsiva{
+                    display: flex;
+
+                    li{
+                        margin-left: 16px;
+
+                        a{
+                            span{
+                                color: $cor-quaternária;
+                                font-size: $tipografia-ícone-tamanho;
+                                font-weight: $tipografia-ícone-peso;
+                            }
+                        }
+                    }
+
+                    li:first-child{
+                        margin-left: 0px;
+                    }
+                }
+            }
+
+            #header-pesquisa-perfil{
+                display: none;
             }
         }
     }
