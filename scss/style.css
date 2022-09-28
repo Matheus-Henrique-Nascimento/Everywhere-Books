@@ -17,6 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #171717;
+  height: 82px;
   padding: 16px 32px;
   /* --- Logo. */
   /* --- Separação em duas sessões: a endereços e a pesquisa-perfil. */
@@ -35,12 +36,9 @@ header #header-endereços-pesquisa-perfil {
   /* --- Pesquisa-perfil. */
 }
 header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão li {
-  margin-left: 16px;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
 }
 header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão li a {
   color: #171717;
@@ -48,16 +46,13 @@ header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-
   font-size: 12px;
   font-weight: initial;
 }
-header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-padrão li:first-child {
-  margin-left: 0px;
-}
 header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva {
   display: none;
 }
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
   margin-left: 64px;
 }
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil input[type=text] {
@@ -76,6 +71,7 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil #header-área-
 }
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil #header-área-de-busca span {
   color: rgba(23, 23, 23, 0.5);
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
   position: absolute;
@@ -90,12 +86,12 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: initial;
-  margin-left: 16px;
   padding: 16px 40px 16px 16px;
   position: relative;
 }
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
-  color: #171717;
+  color: rgba(23, 23, 23, 0.5);
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
   position: absolute;
@@ -113,20 +109,14 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
     display: none;
   }
   header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li {
-    margin-left: 16px;
+    display: grid;
+    gap: 16px;
+    grid-auto-flow: column;
   }
   header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li a span {
     color: #171717;
     font-size: 20px;
     font-weight: initial;
-  }
-  header #header-endereços-pesquisa-perfil #header-endereços #header-endereços-organização-responsiva li:first-child {
-    margin-left: 0px;
   }
   header #header-endereços-pesquisa-perfil #header-pesquisa-perfil {
     display: none;
@@ -168,4 +158,34 @@ main {
 #main-botões-gerais #main-botões-interruptor span:first-child {
   margin-left: 0px;
   background-color: #D7CCC8;
+}
+
+/* --- Entrada inicial. */
+#main-entrada-inicial-padrão {
+  display: grid;
+  gap: 32px;
+  width: 640px;
+}
+#main-entrada-inicial-padrão h2 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+#main-entrada-inicial-padrão p {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  font-weight: initial;
+}
+#main-entrada-inicial-padrão button {
+  background-color: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px 40px 16px 16px;
+  position: relative;
 }/*# sourceMappingURL=style.css.map */

@@ -24,11 +24,21 @@ $tipografia-placeholder-tamanho: 12px;
 $tipografia-placeholder-peso: initial;
 
 $tipografia-botão-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-botão-tamanho-grosso: 16px;
 $tipografia-botão-tamanho: 12px;
 $tipografia-botão-peso: initial;
+$tipografia-botão-peso-grosso: bold;
 
 $tipografia-ícone-tamanho: 20px;
 $tipografia-ícone-peso: initial;
+
+$tipografia-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-título-tamanho: 48px;
+$tipografia-título-peso: bold;
+
+$tipografia-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-parágrafo-tamanho: 32px;
+$tipografia-parágrafo-peso: initial;
 
 /* ------ Resonsividade. */
 
@@ -40,6 +50,102 @@ $responsividade-média: 1000px;
     align-items: center;
     display: flex;
     justify-content: space-between;
+}
+
+@mixin grid-em-linha{
+    display: grid;
+    gap: 16px;
+    grid-auto-flow: column;
+}
+
+@mixin logo-aparência{
+    color: $cor-quaternária;
+    font-family: $tipografia-logo-família;
+    font-size: $tipografia-logo-tamanho;
+    font-weight: $tipografia-logo-peso;
+}
+
+@mixin links-aparência{
+    color: $cor-quaternária;
+    font-family: $tipografia-endereços-família;
+    font-size: $tipografia-endereços-tamanho;
+    font-weight: $tipografia-endereços-peso;
+}
+
+@mixin ícone-aparência{
+    color: $cor-quaternária;
+    font-size: $tipografia-ícone-tamanho;
+    font-weight: $tipografia-ícone-peso;
+}
+
+@mixin título{
+    color: $cor-quaternária;
+    font-family: $tipografia-título-família;
+    font-size: $tipografia-título-tamanho;
+    font-weight: $tipografia-título-peso;
+}
+
+@mixin parágrafo{
+    color: $cor-quaternária;
+    font-family: $tipografia-parágrafo-família;
+    font-size: $tipografia-parágrafo-tamanho;
+    font-weight: $tipografia-parágrafo-peso;
+}
+
+@mixin input-de-texto{
+    background: $cor-terceária;
+    border: none;
+    color: $cor-quaternária-opaca;
+    font-family: $tipografia-placeholder-família;
+    font-size: $tipografia-placeholder-tamanho;
+    font-style: italic;
+    font-weight: $tipografia-placeholder-peso;
+    outline: none;
+    padding: 16px 64px 16px 16px;
+}
+
+@mixin botão-preenchido{
+    background-color: $cor-quaternária;
+    border: none;
+    border-radius: 8px;
+    color: $cor-terceária;
+    font-family: $tipografia-botão-família;
+    font-size: $tipografia-botão-tamanho-grosso;
+    font-weight: $tipografia-botão-peso-grosso;
+    padding: 16px 40px 16px 16px;
+    position: relative;
+}
+
+@mixin botão-não-preenchido{
+    background: none;
+    border: $cor-quaternária solid 1px;
+    color: $cor-quaternária;
+    font-family: $tipografia-botão-família;
+    font-size: $tipografia-botão-tamanho;
+    font-weight: $tipografia-botão-peso;
+    padding: 16px 40px 16px 16px;
+    position: relative;
+}
+
+@mixin ícone-botão{
+    color: $cor-quaternária-opaca;
+    cursor: pointer;
+    font-size: $tipografia-ícone-tamanho;
+    font-weight: $tipografia-ícone-peso;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin ícone-botão-geral{
+    background-color: $cor-terceária;
+    border-radius: 50%;
+    color: $cor-quaternária;
+    cursor: pointer;
+    font-size: $tipografia-ícone-tamanho;
+    font-weight: $tipografia-ícone-peso;
+    padding: 8px;
 }
 
 /* --- Código básico. */
@@ -58,16 +164,14 @@ header{
 
     @include flex-em-linha();
     border-bottom: solid 1px $cor-quaternária;
+    height: 82px;
     padding: 16px 32px;
 
     /* --- Logo. */
 
     #header-logo{
         h1{
-            color: $cor-quaternária;
-            font-family: $tipografia-logo-família;
-            font-size: $tipografia-logo-tamanho;
-            font-weight: $tipografia-logo-peso;
+            @include logo-aparência();
         }
     }
 
@@ -79,22 +183,13 @@ header{
         /* --- Endereços. */
 
         #header-endereços{
-            #header-endereços-organização-padrão{
-                @include flex-em-linha();
+            #header-endereços-organização-padrão{ 
+                @include grid-em-linha();
 
                 li{
-                    margin-left: 16px;
-
                     a{
-                        color: $cor-quaternária;
-                        font-family: $tipografia-endereços-família;
-                        font-size: $tipografia-endereços-tamanho;
-                        font-weight: $tipografia-endereços-peso;
+                        @include links-aparência();
                     }
-                }
-
-                li:first-child{
-                    margin-left: 0px;
                 }
             }
 
@@ -106,54 +201,26 @@ header{
         /* --- Pesquisa-perfil. */
 
         #header-pesquisa-perfil{
-            @include flex-em-linha();
+            @include grid-em-linha();
             margin-left: 64px;
 
             input[type="text"]{
-                background: $cor-terceária;
-                border: none;
-                color: $cor-quaternária-opaca;
-                font-family: $tipografia-placeholder-família;
-                font-size: $tipografia-placeholder-tamanho;
-                font-style: italic;
-                font-weight: $tipografia-placeholder-peso;
-                outline: none;
-                padding: 16px 64px 16px 16px;
+                @include input-de-texto();
             }
 
             #header-área-de-busca{
                 position: relative;
 
                 span{
-                    color: $cor-quaternária-opaca;
-                    font-size: $tipografia-ícone-tamanho;
-                    font-weight: $tipografia-ícone-peso;
-                    position: absolute;
-                    right: 0px;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
+                    @include ícone-botão();
                 }
             }
 
             button{
-                background: none;
-                border: #171717 solid 1px;
-                color: $cor-quaternária;
-                font-family: $tipografia-botão-família;
-                font-size: $tipografia-botão-tamanho;
-                font-weight: $tipografia-botão-peso;
-                margin-left: 16px;
-                padding: 16px 40px 16px 16px;
-                position: relative;
+                @include botão-não-preenchido();
 
                 span{
-                    color: $cor-quaternária;
-                    font-size: $tipografia-ícone-tamanho;
-                    font-weight: $tipografia-ícone-peso;
-                    position: absolute;
-                    right: 0px;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
+                    @include ícone-botão();
                 }
             }
         }
@@ -173,22 +240,14 @@ header{
                 }
 
                 #header-endereços-organização-responsiva{
-                    @include flex-em-linha();
+                    @include grid-em-linha();
 
                     li{
-                        margin-left: 16px;
-
                         a{
                             span{
-                                color: $cor-quaternária;
-                                font-size: $tipografia-ícone-tamanho;
-                                font-weight: $tipografia-ícone-peso;
+                                @include ícone-aparência();
                             }
                         }
-                    }
-
-                    li:first-child{
-                        margin-left: 0px;
                     }
                 }
             }
@@ -218,13 +277,7 @@ main{
     width: 240px;
 
     span{
-        background-color: $cor-terceária;
-        border-radius: 50%;
-        color: $cor-quaternária;
-        cursor: pointer;
-        font-size: $tipografia-ícone-tamanho;
-        font-weight: $tipografia-ícone-peso;
-        padding: 8px;
+        @include ícone-botão-geral();
     }
 
     #main-botões-interruptor{
@@ -239,5 +292,25 @@ main{
             margin-left: 0px;
             background-color: $cor-primária;
         }
+    }
+}
+
+/* --- Entrada inicial. */
+
+#main-entrada-inicial-padrão{
+    display: grid;
+    gap: 32px;
+    width: 640px;
+
+    h2{
+        @include título();
+    }
+
+    p{
+        @include parágrafo();
+    }
+
+    button{
+        @include botão-preenchido();
     }
 }
