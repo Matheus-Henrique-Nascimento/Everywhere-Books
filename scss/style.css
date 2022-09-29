@@ -66,6 +66,7 @@ header #header-endereços-pesquisa-perfil #header-área-de-busca input[type=text
   height: 48px;
   outline: none;
   padding: 16px 64px 16px 16px;
+  width: 240px;
 }
 header #header-endereços-pesquisa-perfil #header-área-de-busca span {
   color: #171717;
@@ -79,6 +80,9 @@ header #header-endereços-pesquisa-perfil #header-área-de-busca span {
   transform: translate(-50%, -50%);
 }
 header #header-endereços-pesquisa-perfil button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: none;
   border: #171717 solid 1px;
   color: #171717;
@@ -86,18 +90,14 @@ header #header-endereços-pesquisa-perfil button {
   font-size: 12px;
   font-weight: initial;
   height: 48px;
-  padding: 16px 40px 16px 16px;
-  position: relative;
+  padding: 0px 16px;
+  width: 160px;
 }
 header #header-endereços-pesquisa-perfil button span {
   color: #171717;
   font-size: 20px;
   font-weight: initial;
   cursor: pointer;
-  position: absolute;
-  right: 0px;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width: 1160px) {
@@ -132,9 +132,6 @@ header #header-endereços-pesquisa-perfil button span {
 }
 /* --- Corpo. */
 #main-botões-gerais {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   grid-area: botões-gerais;
   justify-content: right;
   padding: 16px 32px;
@@ -167,9 +164,6 @@ header #header-endereços-pesquisa-perfil button span {
 
 /* --- Entrada inicial. */
 #main-entrada-inicial-padrão {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   grid-area: entrada-inicial;
   padding: 80px 0px 80px 80px;
 }
@@ -191,6 +185,9 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-entrada-inicial-padrão #main-entrada-inicial-informações button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #171717;
   border: none;
   border-radius: 8px;
@@ -198,8 +195,8 @@ header #header-endereços-pesquisa-perfil button span {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   font-weight: bold;
-  padding: 16px 40px 16px 16px;
-  position: relative;
+  height: 48px;
+  padding: 0px 16px;
   width: 240px;
 }
 #main-entrada-inicial-padrão #main-entrada-inicial-gif img {
