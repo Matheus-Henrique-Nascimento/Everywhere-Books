@@ -17,6 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #171717;
+  grid-area: cabeçalho;
   height: 82px;
   padding: 16px 32px;
   /* --- Logo. */
@@ -90,7 +91,7 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button {
   position: relative;
 }
 header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
-  color: rgba(23, 23, 23, 0.5);
+  color: #171717;
   cursor: pointer;
   font-size: 20px;
   font-weight: initial;
@@ -101,7 +102,7 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
 }
 
 /* --- Responsividade do cabeçalho. */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1160px) {
   header #header-endereços-pesquisa-perfil {
     display: block;
   }
@@ -125,7 +126,8 @@ header #header-endereços-pesquisa-perfil #header-pesquisa-perfil button span {
 /* --- Cabeçalho. */
 /* --- Corpo. */
 main {
-  position: relative;
+  display: grid;
+  grid-template-areas: "botões-gerais" "entrada-inicial";
 }
 
 /* --- Botões gerais. */
@@ -133,10 +135,9 @@ main {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  right: 32px;
-  top: 16px;
-  width: 240px;
+  grid-area: botões-gerais;
+  justify-content: right;
+  padding: 16px 32px;
 }
 #main-botões-gerais span {
   background-color: #FFFFFB;
@@ -146,6 +147,10 @@ main {
   font-size: 20px;
   font-weight: initial;
   padding: 8px;
+  margin: 0px 16px 0px 16px;
+}
+#main-botões-gerais span:first-child {
+  margin: 0px;
 }
 #main-botões-gerais #main-botões-interruptor {
   background-color: #FFFFFB;
@@ -162,23 +167,30 @@ main {
 
 /* --- Entrada inicial. */
 #main-entrada-inicial-padrão {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  grid-area: entrada-inicial;
+  padding: 80px 0px 80px 80px;
+}
+#main-entrada-inicial-padrão #main-entrada-inicial-informações {
   display: grid;
   gap: 32px;
   width: 640px;
 }
-#main-entrada-inicial-padrão h2 {
+#main-entrada-inicial-padrão #main-entrada-inicial-informações h2 {
   color: #171717;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 48px;
   font-weight: bold;
 }
-#main-entrada-inicial-padrão p {
+#main-entrada-inicial-padrão #main-entrada-inicial-informações p {
   color: #171717;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 32px;
   font-weight: initial;
 }
-#main-entrada-inicial-padrão button {
+#main-entrada-inicial-padrão #main-entrada-inicial-informações button {
   background-color: #171717;
   border: none;
   border-radius: 8px;
@@ -188,4 +200,20 @@ main {
   font-weight: bold;
   padding: 16px 40px 16px 16px;
   position: relative;
+  width: 240px;
+}
+#main-entrada-inicial-padrão #main-entrada-inicial-gif img {
+  height: 400px;
+}
+
+/* --- Responsividade da entrada-inicial. */
+@media only screen and (max-width: 1160px) {
+  #main-entrada-inicial-padrão {
+    flex-direction: column;
+    text-align: center;
+  }
+  #main-entrada-inicial-padrão #main-entrada-inicial-informações {
+    justify-items: center;
+    margin-bottom: 80px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -42,7 +42,7 @@ $tipografia-parágrafo-peso: initial;
 
 /* ------ Resonsividade. */
 
-$responsividade-média: 1000px;
+$responsividade-média: 1160px;
 
 /* ------ @mixins. */
 
@@ -56,6 +56,12 @@ $responsividade-média: 1000px;
     display: grid;
     gap: 16px;
     grid-auto-flow: column;
+}
+
+@mixin grid-em-colunas(){
+    display: grid;
+    gap: 32px;
+    width: 640px;
 }
 
 @mixin logo-aparência{
@@ -114,6 +120,7 @@ $responsividade-média: 1000px;
     font-weight: $tipografia-botão-peso-grosso;
     padding: 16px 40px 16px 16px;
     position: relative;
+    width: 240px;
 }
 
 @mixin botão-não-preenchido{
@@ -127,8 +134,19 @@ $responsividade-média: 1000px;
     position: relative;
 }
 
-@mixin ícone-botão{
+@mixin ícone-botão-pesquisa{
     color: $cor-quaternária-opaca;
+    cursor: pointer;
+    font-size: $tipografia-ícone-tamanho;
+    font-weight: $tipografia-ícone-peso;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin ícone-botão{
+    color: $cor-quaternária;
     cursor: pointer;
     font-size: $tipografia-ícone-tamanho;
     font-weight: $tipografia-ícone-peso;
@@ -164,6 +182,7 @@ header{
 
     @include flex-em-linha();
     border-bottom: solid 1px $cor-quaternária;
+    grid-area: cabeçalho;
     height: 82px;
     padding: 16px 32px;
 
@@ -212,7 +231,7 @@ header{
                 position: relative;
 
                 span{
-                    @include ícone-botão();
+                    @include ícone-botão-pesquisa();
                 }
             }
 
@@ -264,20 +283,25 @@ header{
 /* --- Corpo. */
 
 main{
-    position: relative;
+    display: grid;
+    grid-template-areas: "botões-gerais" "entrada-inicial";
 }
 
 /* --- Botões gerais. */
 
 #main-botões-gerais{
     @include flex-em-linha();
-    position: absolute;
-    right: 32px;
-    top: 16px;
-    width: 240px;
+    grid-area: botões-gerais;
+    justify-content: right;
+    padding: 16px 32px;
 
     span{
         @include ícone-botão-geral();
+        margin: 0px 16px 0px 16px;
+    }
+
+    span:first-child{
+        margin: 0px;
     }
 
     #main-botões-interruptor{
@@ -298,19 +322,43 @@ main{
 /* --- Entrada inicial. */
 
 #main-entrada-inicial-padrão{
-    display: grid;
-    gap: 32px;
-    width: 640px;
+    @include flex-em-linha();
+    grid-area: entrada-inicial;
+    padding: 80px 0px 80px 80px;
 
-    h2{
-        @include título();
+    #main-entrada-inicial-informações{
+        @include grid-em-colunas();
+        
+    
+        h2{
+            @include título();
+        }
+    
+        p{
+            @include parágrafo();
+        }
+    
+        button{
+            @include botão-preenchido();
+        }
     }
-
-    p{
-        @include parágrafo();
+    #main-entrada-inicial-gif{
+        img{
+            height: 400px;
+        }
     }
+}
 
-    button{
-        @include botão-preenchido();
+/* --- Responsividade da entrada-inicial. */
+
+@media only screen and (max-width: $responsividade-média){
+    #main-entrada-inicial-padrão{
+        flex-direction: column;
+        text-align: center;
+
+        #main-entrada-inicial-informações{
+            justify-items: center;
+            margin-bottom: 80px;
+        }
     }
 }
