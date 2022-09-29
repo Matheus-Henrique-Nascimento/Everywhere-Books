@@ -53,9 +53,11 @@ $responsividade-média: 1160px;
 }
 
 @mixin grid-em-linha{
+    align-items: center;
     display: grid;
     gap: 16px;
     grid-auto-flow: column;
+    justify-content: space-between;
 }
 
 @mixin grid-em-colunas(){
@@ -106,6 +108,7 @@ $responsividade-média: 1160px;
     font-size: $tipografia-placeholder-tamanho;
     font-style: italic;
     font-weight: $tipografia-placeholder-peso;
+    height: 48px;
     outline: none;
     padding: 16px 64px 16px 16px;
 }
@@ -130,15 +133,15 @@ $responsividade-média: 1160px;
     font-family: $tipografia-botão-família;
     font-size: $tipografia-botão-tamanho;
     font-weight: $tipografia-botão-peso;
+    height: 48px;
     padding: 16px 40px 16px 16px;
     position: relative;
 }
 
 @mixin ícone-botão-pesquisa{
+    @include ícone-aparência();
     color: $cor-quaternária-opaca;
     cursor: pointer;
-    font-size: $tipografia-ícone-tamanho;
-    font-weight: $tipografia-ícone-peso;
     position: absolute;
     right: 0px;
     top: 50%;
@@ -146,10 +149,8 @@ $responsividade-média: 1160px;
 }
 
 @mixin ícone-botão{
-    color: $cor-quaternária;
+    @include ícone-aparência();
     cursor: pointer;
-    font-size: $tipografia-ícone-tamanho;
-    font-weight: $tipografia-ícone-peso;
     position: absolute;
     right: 0px;
     top: 50%;
@@ -157,12 +158,10 @@ $responsividade-média: 1160px;
 }
 
 @mixin ícone-botão-geral{
+    @include ícone-aparência();
     background-color: $cor-terceária;
     border-radius: 50%;
-    color: $cor-quaternária;
     cursor: pointer;
-    font-size: $tipografia-ícone-tamanho;
-    font-weight: $tipografia-ícone-peso;
     padding: 8px;
 }
 
@@ -170,124 +169,75 @@ $responsividade-média: 1160px;
 
 body{
     background-color: $cor-primária;
+    display: grid;
+    grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial";
 }
-
-/* --- Código básico. */
 
 /* --- Cabeçalho. */
 
 header{
-
-    /* --- Cabeçalho padrão. */
-
-    @include flex-em-linha();
+    @include grid-em-linha();
     border-bottom: solid 1px $cor-quaternária;
     grid-area: cabeçalho;
     height: 82px;
     padding: 16px 32px;
 
-    /* --- Logo. */
-
     #header-logo{
-        h1{
-            @include logo-aparência();
-        }
+        h1{@include logo-aparência();}
     }
 
-    /* --- Separação em duas sessões: a endereços e a pesquisa-perfil. */
-
     #header-endereços-pesquisa-perfil{
-        @include flex-em-linha();
+        @include grid-em-linha();
 
-        /* --- Endereços. */
-
-        #header-endereços{
-            #header-endereços-organização-padrão{ 
-                @include grid-em-linha();
-
-                li{
-                    a{
-                        @include links-aparência();
-                    }
-                }
-            }
-
-            #header-endereços-organização-responsiva{
-                display: none
-            }
+        #header-endereços-organização-padrão{ 
+            @include grid-em-linha();
+            a{@include links-aparência();}
         }
 
-        /* --- Pesquisa-perfil. */
+        #header-endereços-organização-responsiva{
+            display: none;
+        }
 
-        #header-pesquisa-perfil{
-            @include grid-em-linha();
-            margin-left: 64px;
+        #header-área-de-busca{
+            position: relative;
+            input[type="text"]{@include input-de-texto();}
+            span{@include ícone-botão-pesquisa();}
+        }
 
-            input[type="text"]{
-                @include input-de-texto();
-            }
-
-            #header-área-de-busca{
-                position: relative;
-
-                span{
-                    @include ícone-botão-pesquisa();
-                }
-            }
-
-            button{
-                @include botão-não-preenchido();
-
-                span{
-                    @include ícone-botão();
-                }
-            }
+        button{
+            @include botão-não-preenchido();
+            span{@include ícone-botão();}
         }
     }
 }
 
-/* --- Responsividade do cabeçalho. */
-
 @media only screen and (max-width: $responsividade-média){
     header{
+
         #header-endereços-pesquisa-perfil{
-            display: block;
+            @include grid-em-linha();
 
-            #header-endereços{
-                #header-endereços-organização-padrão{
-                    display: none;
-                }
-
-                #header-endereços-organização-responsiva{
-                    @include grid-em-linha();
-
-                    li{
-                        a{
-                            span{
-                                @include ícone-aparência();
-                            }
-                        }
-                    }
-                }
+            #header-endereços-organização-padrão{ 
+                display: none;
             }
 
-            #header-pesquisa-perfil{
+            #header-endereços-organização-responsiva{
+                @include grid-em-linha();
+                span{@include ícone-aparência();}
+            }
+
+            #header-área-de-busca{
+                display: none;
+            }
+
+            button{
                 display: none;
             }
         }
     }
 }
 
-/* --- Cabeçalho. */
-
 /* --- Corpo. */
-
-main{
-    display: grid;
-    grid-template-areas: "botões-gerais" "entrada-inicial";
-}
-
-/* --- Botões gerais. */
 
 #main-botões-gerais{
     @include flex-em-linha();
@@ -344,7 +294,7 @@ main{
     }
     #main-entrada-inicial-gif{
         img{
-            height: 400px;
+            height: 320px;
         }
     }
 }
