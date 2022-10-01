@@ -42,7 +42,7 @@ $tipografia-parágrafo-peso: initial;
 
 /* ------ Resonsividade. */
 
-$responsividade-média: 1160px;
+$responsividade-média: 1260px;
 
 /* ------ @mixins. */
 
@@ -58,12 +58,6 @@ $responsividade-média: 1160px;
     gap: 16px;
     grid-auto-flow: column;
     justify-content: space-between;
-}
-
-@mixin grid-em-colunas(){
-    display: grid;
-    gap: 32px;
-    width: 640px;
 }
 
 @mixin logo{
@@ -148,7 +142,7 @@ $responsividade-média: 1160px;
     font-weight: $tipografia-botão-peso-grosso;
     height: 48px;
     padding: 0px 16px;
-    width: 240px;
+    width: 180px;
 }
 
 @mixin botão-não-preenchido{
@@ -162,6 +156,12 @@ $responsividade-média: 1160px;
     height: 48px;
     padding: 0px 16px;
     width: 160px;
+}
+
+@mixin decoração-animada{
+    height: 320px;
+    object-fit: none;
+    width: 100%;
 }
 
 /* --- Código básico. */
@@ -262,14 +262,17 @@ header{
 
 /* --- Entrada inicial. */
 
-#main-entrada-inicial-padrão{
+#main-entrada-inicial{
     @include grid-em-linha();
     grid-area: entrada-inicial;
-    padding: 80px 0px 80px 80px;
+    padding: 80px;
 
     #main-entrada-inicial-informações{
-        @include grid-em-colunas();
-        
+        @include grid-em-linha();
+        gap: 32px;
+        grid-auto-flow: row;
+        width: 640px;
+        order: 1;
     
         h2{
             @include título();
@@ -281,9 +284,14 @@ header{
     
         button{
             @include botão-preenchido();
+            span{
+                @include ícone-botão();
+                color: $cor-terceária;
+            }
         }
     }
     #main-entrada-inicial-gif{
+        order: 2;
         img{
             height: 320px;
         }
@@ -293,13 +301,73 @@ header{
 /* --- Responsividade da entrada-inicial. */
 
 @media only screen and (max-width: $responsividade-média){
-    #main-entrada-inicial-padrão{
+    #main-entrada-inicial{
         grid-auto-flow: row;
         justify-content: center;
-        padding: 80px;
         text-align: center;
 
         #main-entrada-inicial-informações{
+            justify-items: center;
+        }
+    }
+}
+
+/* --- Decoração-animada. */
+
+#main-decoração-animada{
+    img{
+        @include decoração-animada();
+    }
+}
+
+/* --- NewsLetter. */
+
+#main-newsletter{
+    @include grid-em-linha();
+    grid-area: entrada-inicial;
+    padding: 80px;
+
+    #main-newsletter-informações{
+        @include grid-em-linha();
+        gap: 32px;
+        grid-auto-flow: row;
+        order: 2;
+        width: 640px;
+
+        h2{
+            @include título();
+        }
+
+        p{
+            @include parágrafo();
+        }
+
+        button{
+            @include botão-preenchido();
+            span{
+                @include ícone-botão();
+                color: $cor-terceária;
+            }
+        }
+    }
+    #main-newsletter-gif{
+        order: 1;
+
+        img{
+            height: 320px;
+        }
+    }
+}
+
+/* --- Responsividade da newsletter. */
+
+@media only screen and (max-width: $responsividade-média){
+    #main-newsletter{
+        grid-auto-flow: row;
+        justify-content: center;
+        text-align: center;
+
+        #main-newsletter-informações{
             justify-items: center;
         }
     }
