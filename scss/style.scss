@@ -178,7 +178,7 @@ header{
     @include grid-em-linha();
     border-bottom: solid 1px $cor-quaternária;
     grid-area: cabeçalho;
-    height: 82px;
+    height: 80px;
     padding: 16px 32px;
 
     #header-logo{
@@ -239,29 +239,22 @@ header{
 /* --- Corpo. */
 
 #main-botões-gerais{
+    @include grid-em-linha();
     grid-area: botões-gerais;
-    justify-content: right;
+    justify-content: end;
     padding: 16px 32px;
 
     span{
         @include ícone-botão-geral();
-        margin: 0px 16px 0px 16px;
-    }
-
-    span:first-child{
-        margin: 0px;
     }
 
     #main-botões-interruptor{
+        @include grid-em-linha();
         background-color: $cor-terceária;
         border-radius: 100px;
         padding: 8px;
 
-        span{
-            margin-left: 40px;
-        }
         span:first-child{
-            margin-left: 0px;
             background-color: $cor-primária;
         }
     }
@@ -270,6 +263,7 @@ header{
 /* --- Entrada inicial. */
 
 #main-entrada-inicial-padrão{
+    @include grid-em-linha();
     grid-area: entrada-inicial;
     padding: 80px 0px 80px 80px;
 
@@ -300,12 +294,13 @@ header{
 
 @media only screen and (max-width: $responsividade-média){
     #main-entrada-inicial-padrão{
-        flex-direction: column;
+        grid-auto-flow: row;
+        justify-content: center;
+        padding: 80px;
         text-align: center;
 
         #main-entrada-inicial-informações{
             justify-items: center;
-            margin-bottom: 80px;
         }
     }
 }

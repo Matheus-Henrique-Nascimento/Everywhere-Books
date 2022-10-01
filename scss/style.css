@@ -20,7 +20,7 @@ header {
   justify-content: space-between;
   border-bottom: solid 1px #171717;
   grid-area: cabeçalho;
-  height: 82px;
+  height: 80px;
   padding: 16px 32px;
 }
 header #header-logo h1 {
@@ -132,8 +132,13 @@ header #header-endereços-pesquisa-perfil button span {
 }
 /* --- Corpo. */
 #main-botões-gerais {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
+  justify-content: space-between;
   grid-area: botões-gerais;
-  justify-content: right;
+  justify-content: end;
   padding: 16px 32px;
 }
 #main-botões-gerais span {
@@ -144,26 +149,28 @@ header #header-endereços-pesquisa-perfil button span {
   border-radius: 50%;
   cursor: pointer;
   padding: 8px;
-  margin: 0px 16px 0px 16px;
-}
-#main-botões-gerais span:first-child {
-  margin: 0px;
 }
 #main-botões-gerais #main-botões-interruptor {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
+  justify-content: space-between;
   background-color: #FFFFFB;
   border-radius: 100px;
   padding: 8px;
 }
-#main-botões-gerais #main-botões-interruptor span {
-  margin-left: 40px;
-}
 #main-botões-gerais #main-botões-interruptor span:first-child {
-  margin-left: 0px;
   background-color: #D7CCC8;
 }
 
 /* --- Entrada inicial. */
 #main-entrada-inicial-padrão {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
+  justify-content: space-between;
   grid-area: entrada-inicial;
   padding: 80px 0px 80px 80px;
 }
@@ -206,11 +213,12 @@ header #header-endereços-pesquisa-perfil button span {
 /* --- Responsividade da entrada-inicial. */
 @media only screen and (max-width: 1160px) {
   #main-entrada-inicial-padrão {
-    flex-direction: column;
+    grid-auto-flow: row;
+    justify-content: center;
+    padding: 80px;
     text-align: center;
   }
   #main-entrada-inicial-padrão #main-entrada-inicial-informações {
     justify-items: center;
-    margin-bottom: 80px;
   }
 }/*# sourceMappingURL=style.css.map */
