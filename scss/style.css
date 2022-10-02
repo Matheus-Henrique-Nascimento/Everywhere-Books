@@ -8,7 +8,7 @@
 body {
   background-color: #D7CCC8;
   display: grid;
-  grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial";
+  grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial" "primeira-decoração-animada" "newsletter" "carrossel-de-livros";
 }
 
 /* --- Cabeçalho. */
@@ -238,6 +238,9 @@ header #header-endereços-pesquisa-perfil button span {
   }
 }
 /* --- Decoração-animada. */
+#main-decoração-animada {
+  grid-area: primeira-decoração-animada;
+}
 #main-decoração-animada img {
   height: 320px;
   -o-object-fit: none;
@@ -252,7 +255,7 @@ header #header-endereços-pesquisa-perfil button span {
   gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
-  grid-area: entrada-inicial;
+  grid-area: newsletter;
   padding: 80px;
 }
 #main-newsletter #main-newsletter-informações {
@@ -263,7 +266,9 @@ header #header-endereços-pesquisa-perfil button span {
   justify-content: space-between;
   gap: 32px;
   grid-auto-flow: row;
+  justify-items: end;
   order: 2;
+  text-align: end;
   width: 640px;
 }
 #main-newsletter #main-newsletter-informações h2 {
@@ -317,4 +322,57 @@ header #header-endereços-pesquisa-perfil button span {
   #main-newsletter #main-newsletter-informações {
     justify-items: center;
   }
+}
+/* --- Carrossel de livros. */
+#main-carrossel-de-livros {
+  grid-area: carrossel-de-livros;
+  padding: 0px 80px;
+}
+#main-carrossel-de-livros h2 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 80px;
+  text-align: center;
+}
+#main-carrossel-de-livros .main-carrossel-livro {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  grid-auto-flow: row;
+  justify-items: center;
+  text-align: center;
+}
+#main-carrossel-de-livros .main-carrossel-livro img {
+  width: 160px;
+}
+#main-carrossel-de-livros .main-carrossel-livro h3 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+#main-carrossel-de-livros .main-carrossel-livro p {
+  color: rgba(23, 23, 23, 0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: initial;
+}
+#main-carrossel-de-livros .main-carrossel-livro button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+  width: 180px;
 }/*# sourceMappingURL=style.css.map */

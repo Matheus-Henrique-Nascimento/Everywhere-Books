@@ -40,6 +40,14 @@ $tipografia-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 $tipografia-parágrafo-tamanho: 32px;
 $tipografia-parágrafo-peso: initial;
 
+$tipografia-descrição-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-descrição-título-tamanho: 24px;
+$tipografia-descrição-título-peso: bold;
+
+$tipografia-descrição-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-descrição-parágrafo-tamanho: 16px;
+$tipografia-descrição-parágrafo-peso: initial;
+
 /* ------ Resonsividade. */
 
 $responsividade-média: 1260px;
@@ -117,6 +125,20 @@ $responsividade-média: 1260px;
     font-weight: $tipografia-parágrafo-peso;
 }
 
+@mixin descrição-título{
+    color: $cor-quaternária;
+    font-family: $tipografia-descrição-título-família;
+    font-size: $tipografia-descrição-título-tamanho;
+    font-weight: $tipografia-descrição-título-peso;
+}
+
+@mixin descrição-parágrafo{
+    color: $cor-quaternária-opaca;
+    font-family: $tipografia-descrição-parágrafo-família;
+    font-size: $tipografia-descrição-parágrafo-tamanho;
+    font-weight: $tipografia-descrição-parágrafo-peso;
+}
+
 @mixin input-de-texto{
     background: $cor-terceária;
     border: none;
@@ -169,7 +191,7 @@ $responsividade-média: 1260px;
 body{
     background-color: $cor-primária;
     display: grid;
-    grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial";
+    grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial" "primeira-decoração-animada" "newsletter" "carrossel-de-livros";
 }
 
 /* --- Cabeçalho. */
@@ -315,6 +337,8 @@ header{
 /* --- Decoração-animada. */
 
 #main-decoração-animada{
+    grid-area: primeira-decoração-animada;
+    
     img{
         @include decoração-animada();
     }
@@ -324,14 +348,16 @@ header{
 
 #main-newsletter{
     @include grid-em-linha();
-    grid-area: entrada-inicial;
+    grid-area: newsletter;
     padding: 80px;
 
     #main-newsletter-informações{
         @include grid-em-linha();
         gap: 32px;
         grid-auto-flow: row;
+        justify-items: end;
         order: 2;
+        text-align: end;
         width: 640px;
 
         h2{
@@ -344,6 +370,7 @@ header{
 
         button{
             @include botão-preenchido();
+
             span{
                 @include ícone-botão();
                 color: $cor-terceária;
@@ -369,6 +396,42 @@ header{
 
         #main-newsletter-informações{
             justify-items: center;
+        }
+    }
+}
+
+/* --- Carrossel de livros. */
+
+#main-carrossel-de-livros{
+    grid-area: carrossel-de-livros;
+    padding: 0px 80px;
+
+    h2{
+        @include título();
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .main-carrossel-livro{
+        @include grid-em-linha();
+        grid-auto-flow: row;
+        justify-items: center;
+        text-align: center;
+
+        img{
+            width: 160px;
+        }
+
+        h3{
+            @include descrição-título();
+        }
+
+        p{
+            @include descrição-parágrafo();
+        }
+
+        button{
+            @include botão-preenchido();
         }
     }
 }
