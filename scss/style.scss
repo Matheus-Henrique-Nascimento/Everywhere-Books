@@ -68,6 +68,14 @@ $responsividade-média: 1260px;
     justify-content: space-between;
 }
 
+@mixin grid-em-linhas-e-colunas{
+    column-gap: 256px;
+    display: grid;
+    grid-template-columns: repeat(4, 180px);
+    justify-content: center;
+    row-gap: 80px;
+}
+
 @mixin logo{
     color: $cor-quaternária;
     font-family: $tipografia-logo-família;
@@ -404,7 +412,7 @@ header{
 
 #main-carrossel-de-livros{
     grid-area: carrossel-de-livros;
-    padding: 0px 80px;
+    padding: 0px 80px 80px 80px;
 
     h2{
         @include título();
@@ -412,26 +420,30 @@ header{
         text-align: center;
     }
 
-    .main-carrossel-livro{
-        @include grid-em-linha();
-        grid-auto-flow: row;
-        justify-items: center;
-        text-align: center;
+    #main-carrossel-área-dos-livros{
+        @include grid-em-linhas-e-colunas();
 
-        img{
-            width: 160px;
-        }
-
-        h3{
-            @include descrição-título();
-        }
-
-        p{
-            @include descrição-parágrafo();
-        }
-
-        button{
-            @include botão-preenchido();
+        .main-carrossel-livro{
+            @include grid-em-linha();
+            grid-auto-flow: row;
+            justify-items: center;
+            text-align: center;
+    
+            img{
+                width: 160px;
+            }
+    
+            h3{
+                @include descrição-título();
+            }
+    
+            p{
+                @include descrição-parágrafo();
+            }
+    
+            button{
+                @include botão-preenchido();
+            }
         }
     }
 }
