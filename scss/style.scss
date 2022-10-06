@@ -18,7 +18,6 @@ $tipografia-endereços-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 $tipografia-endereços-tamanho: 12px;
 $tipografia-endereços-peso: initial;
 
-
 $tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $tipografia-placeholder-tamanho: 12px;
 $tipografia-placeholder-peso: initial;
@@ -26,6 +25,10 @@ $tipografia-placeholder-peso: initial;
 $tipografia-botão-cabeçalho-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $tipografia-botão-cabeçalho-tamanho: 12px;
 $tipografia-botão-cabeçalho-peso: initial;
+
+$tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-botão-corpo-tamanho: 16px;
+$tipografia-botão-corpo-peso: bold;
 
 $tipografia-ícone-tamanho: 20px;
 $tipografia-ícone-peso: initial;
@@ -166,20 +169,21 @@ $responsividade-média: 1260px;
     border-radius: 50%;
     padding: 8px;
 }
-/*
-@mixin botão-preenchido{
-    @include flex-individual();
-    background-color: $cor-quaternária;
+
+@mixin botão-do-corpo{
+    @include grid-em-linha();
+    background: $cor-quaternária;
     border: none;
     border-radius: 8px;
     color: $cor-terceária;
-    font-family: $tipografia-botão-família;
-    font-size: $tipografia-botão-tamanho-grosso;
-    font-weight: $tipografia-botão-peso-grosso;
+    column-gap: 0px;
+    font-family: $tipografia-botão-corpo-família;
+    font-size: $tipografia-botão-corpo-tamanho;
+    font-weight: $tipografia-botão-corpo-peso;
     height: 48px;
     padding: 0px 16px;
 }
-*/
+
 @mixin decoração-animada{
     height: 320px;
     object-fit: none;
@@ -293,30 +297,30 @@ header{
         @include grid-em-linha();
         gap: 32px;
         grid-auto-flow: row;
+        justify-items: start;
         width: 640px;
         order: 1;
-    
-        h2{
-            @include título();
-        }
-    
-        p{
-            @include parágrafo();
-        }
-    
+
+        h2{@include título();}
+
+        p{@include parágrafo();}
+
         button{
-            /*@include botão-preenchido();*/
+            @include botão-do-corpo();
+            justify-self: start;
+
             span{
                 @include ícone();
+                margin-left: 16px;
                 color: $cor-terceária;
             }
         }
     }
+
     #main-entrada-inicial-gif{
         order: 2;
-        img{
-            height: 320px;
-        }
+
+        img{height: 320px;}
     }
 }
 
@@ -330,6 +334,8 @@ header{
 
         #main-entrada-inicial-informações{
             justify-items: center;
+
+            button{justify-self: center;}
         }
     }
 }
@@ -369,10 +375,11 @@ header{
         }
 
         button{
-            /*@include botão-preenchido();*/
+            @include botão-do-corpo();
 
             span{
                 @include ícone();
+                margin-left: 16px;
                 color: $cor-terceária;
             }
         }
@@ -396,6 +403,8 @@ header{
 
         #main-newsletter-informações{
             justify-items: center;
+
+            button{justify-self: center;}
         }
     }
 }

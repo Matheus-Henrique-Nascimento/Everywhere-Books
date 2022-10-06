@@ -7,20 +7,6 @@
 /* ------ @mixins tipográficos. */
 /* ------ @mixins do cabeçalho. */
 /* ------ @mixins do corpo. */
-/*
-@mixin botão-preenchido{
-    @include flex-individual();
-    background-color: $cor-quaternária;
-    border: none;
-    border-radius: 8px;
-    color: $cor-terceária;
-    font-family: $tipografia-botão-família;
-    font-size: $tipografia-botão-tamanho-grosso;
-    font-weight: $tipografia-botão-peso-grosso;
-    height: 48px;
-    padding: 0px 16px;
-}
-*/
 /* --- Código básico. */
 body {
   background-color: #D7CCC8;
@@ -214,6 +200,7 @@ header #header-endereços-pesquisa-perfil button span {
   justify-content: space-between;
   gap: 32px;
   grid-auto-flow: row;
+  justify-items: start;
   width: 640px;
   order: 1;
 }
@@ -230,13 +217,31 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-entrada-inicial #main-entrada-inicial-informações button {
-  /*@include botão-preenchido();*/
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+  justify-self: start;
 }
 #main-entrada-inicial #main-entrada-inicial-informações button span {
   color: #171717;
   cursor: pointer;
   font-size: 20px;
   font-weight: initial;
+  margin-left: 16px;
   color: #FFFFFB;
 }
 #main-entrada-inicial #main-entrada-inicial-gif {
@@ -255,6 +260,9 @@ header #header-endereços-pesquisa-perfil button span {
   }
   #main-entrada-inicial #main-entrada-inicial-informações {
     justify-items: center;
+  }
+  #main-entrada-inicial #main-entrada-inicial-informações button {
+    justify-self: center;
   }
 }
 /* --- Decoração-animada. */
@@ -306,13 +314,30 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-newsletter #main-newsletter-informações button {
-  /*@include botão-preenchido();*/
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
 }
 #main-newsletter #main-newsletter-informações button span {
   color: #171717;
   cursor: pointer;
   font-size: 20px;
   font-weight: initial;
+  margin-left: 16px;
   color: #FFFFFB;
 }
 #main-newsletter #main-newsletter-gif {
@@ -331,6 +356,9 @@ header #header-endereços-pesquisa-perfil button span {
   }
   #main-newsletter #main-newsletter-informações {
     justify-items: center;
+  }
+  #main-newsletter #main-newsletter-informações button {
+    justify-self: center;
   }
 }
 /* --- Carrossel de livros. */
