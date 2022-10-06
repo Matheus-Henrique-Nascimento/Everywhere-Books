@@ -210,7 +210,6 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: bold;
   height: 48px;
   padding: 0px 16px;
-  width: 180px;
 }
 #main-entrada-inicial #main-entrada-inicial-informações button span {
   color: #171717;
@@ -296,7 +295,6 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: bold;
   height: 48px;
   padding: 0px 16px;
-  width: 180px;
 }
 #main-newsletter #main-newsletter-informações button span {
   color: #171717;
@@ -382,5 +380,27 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: bold;
   height: 48px;
   padding: 0px 16px;
-  width: 180px;
+}
+#main-carrossel-de-livros #main-carrossel-botões span {
+  color: #171717;
+  font-size: 20px;
+  font-weight: initial;
+  background-color: #FFFFFB;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 8px;
+}
+#main-carrossel-de-livros #main-carrossel-botões button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
 }/*# sourceMappingURL=style.css.map */

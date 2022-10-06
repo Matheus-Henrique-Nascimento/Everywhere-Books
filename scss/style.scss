@@ -172,7 +172,6 @@ $responsividade-média: 1260px;
     font-weight: $tipografia-botão-peso-grosso;
     height: 48px;
     padding: 0px 16px;
-    width: 180px;
 }
 
 @mixin botão-não-preenchido{
@@ -444,6 +443,16 @@ header{
             button{
                 @include botão-preenchido();
             }
+        }
+    }
+
+    #main-carrossel-botões{
+        span{
+            @include ícone-botão-geral();
+        }
+
+        button{
+            @include botão-preenchido();
         }
     }
 }
