@@ -3,7 +3,24 @@
 /* ------ Cores. */
 /* ------ Tipografia. */
 /* ------ Resonsividade. */
-/* ------ @mixins. */
+/* ------ @mixins gerais. */
+/* ------ @mixins tipográficos. */
+/* ------ @mixins do cabeçalho. */
+/* ------ @mixins do corpo. */
+/*
+@mixin botão-preenchido{
+    @include flex-individual();
+    background-color: $cor-quaternária;
+    border: none;
+    border-radius: 8px;
+    color: $cor-terceária;
+    font-family: $tipografia-botão-família;
+    font-size: $tipografia-botão-tamanho-grosso;
+    font-weight: $tipografia-botão-peso-grosso;
+    height: 48px;
+    padding: 0px 16px;
+}
+*/
 /* --- Código básico. */
 body {
   background-color: #D7CCC8;
@@ -14,13 +31,14 @@ body {
 /* --- Cabeçalho. */
 header {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   border-bottom: solid 1px #171717;
   grid-area: cabeçalho;
-  height: 80px;
+  height: 96px;
   padding: 16px 32px;
 }
 header #header-logo h1 {
@@ -31,15 +49,17 @@ header #header-logo h1 {
 }
 header #header-endereços-pesquisa-perfil {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
 }
 header #header-endereços-pesquisa-perfil #header-endereços-organização-padrão {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
 }
@@ -65,27 +85,32 @@ header #header-endereços-pesquisa-perfil #header-área-de-busca input[type=text
   font-weight: initial;
   height: 48px;
   outline: none;
-  padding: 16px 64px 16px 16px;
-  width: 240px;
+  padding: 0px 16px;
+  width: 216px;
 }
 header #header-endereços-pesquisa-perfil #header-área-de-busca span {
   color: #171717;
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
   color: rgba(23, 23, 23, 0.5);
-  cursor: pointer;
   position: absolute;
   right: 0px;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 header #header-endereços-pesquisa-perfil button {
-  display: flex;
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
   justify-content: space-between;
   background: none;
-  border: #171717 solid 1px;
+  border: solid 1px #171717;
   color: #171717;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: initial;
@@ -95,16 +120,17 @@ header #header-endereços-pesquisa-perfil button {
 }
 header #header-endereços-pesquisa-perfil button span {
   color: #171717;
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 1260px) {
   header #header-endereços-pesquisa-perfil {
     align-items: center;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
     display: grid;
-    gap: 16px;
     grid-auto-flow: column;
     justify-content: space-between;
   }
@@ -113,13 +139,15 @@ header #header-endereços-pesquisa-perfil button span {
   }
   header #header-endereços-pesquisa-perfil #header-endereços-organização-responsiva {
     align-items: center;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
     display: grid;
-    gap: 16px;
     grid-auto-flow: column;
     justify-content: space-between;
   }
   header #header-endereços-pesquisa-perfil #header-endereços-organização-responsiva span {
     color: #171717;
+    cursor: pointer;
     font-size: 20px;
     font-weight: initial;
   }
@@ -130,11 +158,12 @@ header #header-endereços-pesquisa-perfil button span {
     display: none;
   }
 }
-/* --- Corpo. */
+/* --- Botões gerais. */
 #main-botões-gerais {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   grid-area: botões-gerais;
@@ -143,17 +172,18 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-botões-gerais span {
   color: #171717;
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
   background-color: #FFFFFB;
   border-radius: 50%;
-  cursor: pointer;
   padding: 8px;
 }
 #main-botões-gerais #main-botões-interruptor {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   background-color: #FFFFFB;
@@ -167,8 +197,9 @@ header #header-endereços-pesquisa-perfil button span {
 /* --- Entrada inicial. */
 #main-entrada-inicial {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   grid-area: entrada-inicial;
@@ -176,8 +207,9 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-entrada-inicial #main-entrada-inicial-informações {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   gap: 32px;
@@ -198,24 +230,13 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-entrada-inicial #main-entrada-inicial-informações button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #171717;
-  border: none;
-  border-radius: 8px;
-  color: #FFFFFB;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  height: 48px;
-  padding: 0px 16px;
+  /*@include botão-preenchido();*/
 }
 #main-entrada-inicial #main-entrada-inicial-informações button span {
   color: #171717;
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
-  cursor: pointer;
   color: #FFFFFB;
 }
 #main-entrada-inicial #main-entrada-inicial-gif {
@@ -250,8 +271,9 @@ header #header-endereços-pesquisa-perfil button span {
 /* --- NewsLetter. */
 #main-newsletter {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   grid-area: newsletter;
@@ -259,8 +281,9 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-newsletter #main-newsletter-informações {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   gap: 32px;
@@ -283,24 +306,13 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-newsletter #main-newsletter-informações button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #171717;
-  border: none;
-  border-radius: 8px;
-  color: #FFFFFB;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  height: 48px;
-  padding: 0px 16px;
+  /*@include botão-preenchido();*/
 }
 #main-newsletter #main-newsletter-informações button span {
   color: #171717;
+  cursor: pointer;
   font-size: 20px;
   font-weight: initial;
-  cursor: pointer;
   color: #FFFFFB;
 }
 #main-newsletter #main-newsletter-gif {
@@ -344,8 +356,9 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro {
   align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   display: grid;
-  gap: 16px;
   grid-auto-flow: column;
   justify-content: space-between;
   grid-auto-flow: row;
@@ -368,39 +381,8 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #171717;
-  border: none;
-  border-radius: 8px;
-  color: #FFFFFB;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  height: 48px;
-  padding: 0px 16px;
-}
-#main-carrossel-de-livros #main-carrossel-botões span {
-  color: #171717;
-  font-size: 20px;
-  font-weight: initial;
-  background-color: #FFFFFB;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 8px;
+  /*@include botão-preenchido();*/
 }
 #main-carrossel-de-livros #main-carrossel-botões button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #171717;
-  border: none;
-  border-radius: 8px;
-  color: #FFFFFB;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  height: 48px;
-  padding: 0px 16px;
+  /*@include botão-preenchido();*/
 }/*# sourceMappingURL=style.css.map */

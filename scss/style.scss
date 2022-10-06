@@ -23,11 +23,9 @@ $tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri
 $tipografia-placeholder-tamanho: 12px;
 $tipografia-placeholder-peso: initial;
 
-$tipografia-botão-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-botão-tamanho-grosso: 16px;
-$tipografia-botão-tamanho: 12px;
-$tipografia-botão-peso: initial;
-$tipografia-botão-peso-grosso: bold;
+$tipografia-botão-cabeçalho-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-botão-cabeçalho-tamanho: 12px;
+$tipografia-botão-cabeçalho-peso: initial;
 
 $tipografia-ícone-tamanho: 20px;
 $tipografia-ícone-peso: initial;
@@ -52,18 +50,12 @@ $tipografia-descrição-parágrafo-peso: initial;
 
 $responsividade-média: 1260px;
 
-/* ------ @mixins. */
-
-@mixin flex-individual{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+/* ------ @mixins gerais. */
 
 @mixin grid-em-linha{
     align-items: center;
+    column-gap: 16px;
     display: grid;
-    gap: 16px;
     grid-auto-flow: column;
     justify-content: space-between;
 }
@@ -75,6 +67,8 @@ $responsividade-média: 1260px;
     justify-content: center;
     row-gap: 80px;
 }
+
+/* ------ @mixins tipográficos. */
 
 @mixin logo{
     color: $cor-quaternária;
@@ -92,31 +86,9 @@ $responsividade-média: 1260px;
 
 @mixin ícone{
     color: $cor-quaternária;
+    cursor: pointer;
     font-size: $tipografia-ícone-tamanho;
     font-weight: $tipografia-ícone-peso;
-}
-
-@mixin ícone-botão-pesquisa{
-    @include ícone();
-    color: $cor-quaternária-opaca;
-    cursor: pointer;
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin ícone-botão{
-    @include ícone();
-    cursor: pointer;
-}
-
-@mixin ícone-botão-geral{
-    @include ícone();
-    background-color: $cor-terceária;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 8px;
 }
 
 @mixin título{
@@ -147,7 +119,9 @@ $responsividade-média: 1260px;
     font-weight: $tipografia-descrição-parágrafo-peso;
 }
 
-@mixin input-de-texto{
+/* ------ @mixins do cabeçalho. */
+
+@mixin input-de-pesquisa{
     background: $cor-terceária;
     border: none;
     color: $cor-quaternária-opaca;
@@ -157,10 +131,42 @@ $responsividade-média: 1260px;
     font-weight: $tipografia-placeholder-peso;
     height: 48px;
     outline: none;
-    padding: 16px 64px 16px 16px;
-    width: 240px;
+    padding: 0px 16px;
+    width: 216px;
 }
 
+@mixin ícone-input-de-pesquisa{
+    @include ícone();
+    color: $cor-quaternária-opaca;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin botão-do-cabeçalho{
+    @include grid-em-linha();
+    background: none;
+    border: solid 1px $cor-quaternária;
+    color: $cor-quaternária;
+    column-gap: 0px;
+    font-family: $tipografia-botão-cabeçalho-família;
+    font-size: $tipografia-botão-cabeçalho-tamanho;
+    font-weight: $tipografia-botão-cabeçalho-peso;
+    height: 48px;
+    padding: 0px 16px;
+    width: 160px;
+}
+
+/* ------ @mixins do corpo. */
+
+@mixin botão-geral{
+    @include ícone();
+    background-color: $cor-terceária;
+    border-radius: 50%;
+    padding: 8px;
+}
+/*
 @mixin botão-preenchido{
     @include flex-individual();
     background-color: $cor-quaternária;
@@ -173,20 +179,7 @@ $responsividade-média: 1260px;
     height: 48px;
     padding: 0px 16px;
 }
-
-@mixin botão-não-preenchido{
-    @include flex-individual();
-    background: none;
-    border: $cor-quaternária solid 1px;
-    color: $cor-quaternária;
-    font-family: $tipografia-botão-família;
-    font-size: $tipografia-botão-tamanho;
-    font-weight: $tipografia-botão-peso;
-    height: 48px;
-    padding: 0px 16px;
-    width: 160px;
-}
-
+*/
 @mixin decoração-animada{
     height: 320px;
     object-fit: none;
@@ -207,7 +200,7 @@ header{
     @include grid-em-linha();
     border-bottom: solid 1px $cor-quaternária;
     grid-area: cabeçalho;
-    height: 80px;
+    height: 96px;
     padding: 16px 32px;
 
     #header-logo{
@@ -228,13 +221,13 @@ header{
 
         #header-área-de-busca{
             position: relative;
-            input[type="text"]{@include input-de-texto();}
-            span{@include ícone-botão-pesquisa();}
+            input[type="text"]{@include input-de-pesquisa();}
+            span{@include ícone-input-de-pesquisa();}
         }
 
         button{
-            @include botão-não-preenchido();
-            span{@include ícone-botão();}
+            @include botão-do-cabeçalho();
+            span{@include ícone();}
         }
     }
 }
@@ -265,7 +258,7 @@ header{
     }
 }
 
-/* --- Corpo. */
+/* --- Botões gerais. */
 
 #main-botões-gerais{
     @include grid-em-linha();
@@ -274,7 +267,7 @@ header{
     padding: 16px 32px;
 
     span{
-        @include ícone-botão-geral();
+        @include botão-geral();
     }
 
     #main-botões-interruptor{
@@ -312,9 +305,9 @@ header{
         }
     
         button{
-            @include botão-preenchido();
+            /*@include botão-preenchido();*/
             span{
-                @include ícone-botão();
+                @include ícone();
                 color: $cor-terceária;
             }
         }
@@ -376,10 +369,10 @@ header{
         }
 
         button{
-            @include botão-preenchido();
+            /*@include botão-preenchido();*/
 
             span{
-                @include ícone-botão();
+                @include ícone();
                 color: $cor-terceária;
             }
         }
@@ -441,18 +434,18 @@ header{
             }
     
             button{
-                @include botão-preenchido();
+                /*@include botão-preenchido();*/
             }
         }
     }
 
     #main-carrossel-botões{
         span{
-            @include ícone-botão-geral();
+            
         }
 
         button{
-            @include botão-preenchido();
+            /*@include botão-preenchido();*/
         }
     }
 }
