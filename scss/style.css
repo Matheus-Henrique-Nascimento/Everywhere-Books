@@ -3,26 +3,11 @@
 /* ------ Cores. */
 /* ------ Tipografia. */
 /* ------ Resonsividade. */
-/* ------ @mixins gerais. */
+/* ------ @mixins de organização. */
 /* ------ @mixins tipográficos. */
 /* ------ @mixins do cabeçalho. */
 /* ------ @mixins do corpo. */
 /* --- Código básico. */
-#ruído {
-  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
-  height: 580px;
-  mix-blend-mode: soft-light;
-  position: absolute;
-  top: 96px;
-  width: 100vw;
-  z-index: -1;
-}
-
-@media only screen and (max-width: 1260px) {
-  #ruído {
-    height: 903px;
-  }
-}
 body {
   background-color: #D7CCC8;
 }
@@ -166,6 +151,7 @@ header #header-endereços-pesquisa-perfil button span {
   justify-content: space-between;
   justify-content: end;
   padding: 16px 32px;
+  position: relative;
 }
 #main-botões-gerais span {
   color: #171717;
@@ -191,6 +177,24 @@ header #header-endereços-pesquisa-perfil button span {
   background-color: #D7CCC8;
 }
 
+/* --- Ruído entrada inicial. */
+#ruído-entrada-inicial {
+  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+  height: 580px;
+  left: 0px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
+/* --- Responsividade do ruído. */
+@media only screen and (max-width: 1260px) {
+  #ruído-entrada-inicial {
+    height: 903px;
+  }
+}
 /* --- Entrada inicial. */
 #main-entrada-inicial {
   align-items: center;
@@ -199,6 +203,7 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  border-bottom: solid 1px #171717;
   padding: 80px;
   text-align: start;
 }
@@ -273,11 +278,12 @@ header #header-endereços-pesquisa-perfil button span {
   }
 }
 /* --- Decoração-animada. */
-#main-decoração-animada img {
+.main-decoração-animada img {
   height: 320px;
   -o-object-fit: none;
      object-fit: none;
   width: 100%;
+  border-bottom: solid 1px #171717;
 }
 
 /* --- NewsLetter. */
@@ -288,7 +294,9 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  border-bottom: solid 1px #171717;
   padding: 80px;
+  position: relative;
   text-align: end;
 }
 #main-newsletter #main-newsletter-informações {
@@ -361,9 +369,29 @@ header #header-endereços-pesquisa-perfil button span {
     justify-self: center;
   }
 }
+/* --- Ruído newsletter. */
+#ruído-newsletter {
+  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+  height: 580px;
+  left: 0px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+  height: 529px;
+}
+
+/* --- Responsividade do ruído. */
+@media only screen and (max-width: 1260px) {
+  #ruído-newsletter {
+    height: 852px;
+  }
+}
 /* --- Carrossel de livros. */
 #main-carrossel-de-livros {
-  padding: 0px 80px 0px 80px;
+  border-bottom: solid 1px #171717;
+  padding: 80px 80px 0px 80px;
 }
 #main-carrossel-de-livros h2 {
   color: #171717;
@@ -377,12 +405,9 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-column-gap: 256px;
        column-gap: 256px;
   display: grid;
-  grid-template-columns: repeat(4, 180px);
+  grid-template-columns: repeat(auto-fill, 180px);
   justify-content: center;
   row-gap: 80px;
-  /* Esses dois elementos serão retirados quando eu fizer o carrossel com Javascript. */
-  overflow: hidden;
-  width: 100%;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro {
   align-items: center;
@@ -406,12 +431,20 @@ header #header-endereços-pesquisa-perfil button span {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 24px;
   font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 160px;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro p {
   color: rgba(23, 23, 23, 0.5);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   font-weight: initial;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 160px;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro button {
   align-items: center;
@@ -440,7 +473,7 @@ header #header-endereços-pesquisa-perfil button span {
   margin-left: 16px;
   color: #FFFFFB;
 }
-#main-carrossel-de-livros #main-carrossel-botões {
+#main-carrossel-de-livros .main-carrossel-botões {
   align-items: center;
   -moz-column-gap: 16px;
        column-gap: 16px;
@@ -450,13 +483,17 @@ header #header-endereços-pesquisa-perfil button span {
   justify-content: center;
   padding: 80px;
 }
-#main-carrossel-de-livros #main-carrossel-botões span {
+#main-carrossel-de-livros .main-carrossel-botões span {
   color: #171717;
   cursor: pointer;
   font-size: 20px;
   font-weight: initial;
+  background-color: #171717;
+  border-radius: 50%;
+  color: #FFFFFB;
+  padding: 8px;
 }
-#main-carrossel-de-livros #main-carrossel-botões button {
+#main-carrossel-de-livros .main-carrossel-botões button {
   align-items: center;
   -moz-column-gap: 16px;
        column-gap: 16px;
@@ -475,7 +512,250 @@ header #header-endereços-pesquisa-perfil button span {
   height: 48px;
   padding: 0px 16px;
 }
-#main-carrossel-de-livros #main-carrossel-botões button span {
+#main-carrossel-de-livros .main-carrossel-botões button span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  margin-left: 16px;
+  color: #FFFFFB;
+}
+
+/* --- Promoção. */
+#main-promoção {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  border-bottom: solid 1px #171717;
+  padding: 80px;
+  position: relative;
+  text-align: start;
+}
+#main-promoção #main-promoção-informações {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  gap: 32px;
+  grid-auto-flow: row;
+  justify-items: start;
+  order: 1;
+  width: 640px;
+}
+#main-promoção #main-promoção-informações h2 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+#main-promoção #main-promoção-informações p {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 32px;
+  font-weight: initial;
+}
+#main-promoção #main-promoção-informações button {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-promoção #main-promoção-informações button span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  margin-left: 16px;
+  color: #FFFFFB;
+}
+#main-promoção #main-promoção-gif {
+  order: 2;
+}
+#main-promoção #main-promoção-gif img {
+  height: 320px;
+}
+
+/* --- Responsividade da promoção. */
+@media only screen and (max-width: 1260px) {
+  #main-promoção {
+    grid-auto-flow: row;
+    justify-content: center;
+    text-align: center;
+  }
+  #main-promoção #main-promoção-informações button {
+    justify-self: center;
+  }
+}
+/* --- Ruído promoção. */
+#ruído-promoção {
+  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+  height: 580px;
+  left: 0px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+  height: 561px;
+}
+
+/* --- Responsividade do ruído. */
+@media only screen and (max-width: 1260px) {
+  #ruído-promoção {
+    height: 884px;
+  }
+}
+/* --- Carrossel de artigos. */
+#main-carrossel-de-artigos {
+  border-bottom: solid 1px #171717;
+  padding: 80px 80px 0px 80px;
+}
+#main-carrossel-de-artigos h2 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 80px;
+  text-align: center;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos {
+  -moz-column-gap: 256px;
+       column-gap: 256px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  justify-content: center;
+  row-gap: 80px;
+  -moz-column-gap: 144px;
+       column-gap: 144px;
+  grid-template-columns: repeat(auto-fill, 480px);
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  grid-auto-flow: row;
+  justify-items: center;
+  row-gap: 16px;
+  text-align: center;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo img {
+  height: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  width: 480px;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo h3 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 480px;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo p {
+  color: rgba(23, 23, 23, 0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: initial;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 480px;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo button {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo button span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  margin-left: 16px;
+  color: #FFFFFB;
+}
+#main-carrossel-de-artigos .main-carrossel-botões {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  justify-content: center;
+  padding: 80px;
+}
+#main-carrossel-de-artigos .main-carrossel-botões span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  background-color: #171717;
+  border-radius: 50%;
+  color: #FFFFFB;
+  padding: 8px;
+}
+#main-carrossel-de-artigos .main-carrossel-botões button {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-artigos .main-carrossel-botões button span {
   color: #171717;
   cursor: pointer;
   font-size: 20px;

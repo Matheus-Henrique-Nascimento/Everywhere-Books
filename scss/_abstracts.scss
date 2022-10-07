@@ -1,0 +1,208 @@
+/* --- Informações básicas: variáveis. */
+
+/* ------ Cores. */
+
+$cor-primária: #D7CCC8;
+$cor-secundária: #A69B97;
+$cor-terceária: #FFFFFB;
+$cor-quaternária: #171717;
+$cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
+
+/* ------ Tipografia. */
+
+$tipografia-logo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-logo-tamanho: 24px;
+$tipografia-logo-peso: bold;
+
+$tipografia-endereços-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-endereços-tamanho: 12px;
+$tipografia-endereços-peso: initial;
+
+$tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-placeholder-tamanho: 12px;
+$tipografia-placeholder-peso: initial;
+
+$tipografia-botão-cabeçalho-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-botão-cabeçalho-tamanho: 12px;
+$tipografia-botão-cabeçalho-peso: initial;
+
+$tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-botão-corpo-tamanho: 16px;
+$tipografia-botão-corpo-peso: bold;
+
+$tipografia-ícone-tamanho: 20px;
+$tipografia-ícone-peso: initial;
+
+$tipografia-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-título-tamanho: 48px;
+$tipografia-título-peso: bold;
+
+$tipografia-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-parágrafo-tamanho: 32px;
+$tipografia-parágrafo-peso: initial;
+
+$tipografia-descrição-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-descrição-título-tamanho: 24px;
+$tipografia-descrição-título-peso: bold;
+
+$tipografia-descrição-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$tipografia-descrição-parágrafo-tamanho: 16px;
+$tipografia-descrição-parágrafo-peso: initial;
+
+/* ------ Resonsividade. */
+
+$responsividade-média: 1260px;
+
+/* ------ @mixins de organização. */
+
+@mixin grid-em-linha{
+    align-items: center;
+    column-gap: 16px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+
+@mixin grid-em-linhas-e-colunas{
+    column-gap: 256px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    justify-content: center;
+    row-gap: 80px;
+}
+
+/* ------ @mixins tipográficos. */
+
+@mixin logo{
+    color: $cor-quaternária;
+    font-family: $tipografia-logo-família;
+    font-size: $tipografia-logo-tamanho;
+    font-weight: $tipografia-logo-peso;
+}
+
+@mixin links{
+    color: $cor-quaternária;
+    font-family: $tipografia-endereços-família;
+    font-size: $tipografia-endereços-tamanho;
+    font-weight: $tipografia-endereços-peso;
+}
+
+@mixin ícone{
+    color: $cor-quaternária;
+    cursor: pointer;
+    font-size: $tipografia-ícone-tamanho;
+    font-weight: $tipografia-ícone-peso;
+}
+
+@mixin título{
+    color: $cor-quaternária;
+    font-family: $tipografia-título-família;
+    font-size: $tipografia-título-tamanho;
+    font-weight: $tipografia-título-peso;
+}
+
+@mixin parágrafo{
+    color: $cor-quaternária;
+    font-family: $tipografia-parágrafo-família;
+    font-size: $tipografia-parágrafo-tamanho;
+    font-weight: $tipografia-parágrafo-peso;
+}
+
+@mixin descrição-título{
+    color: $cor-quaternária;
+    font-family: $tipografia-descrição-título-família;
+    font-size: $tipografia-descrição-título-tamanho;
+    font-weight: $tipografia-descrição-título-peso;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin descrição-parágrafo{
+    color: $cor-quaternária-opaca;
+    font-family: $tipografia-descrição-parágrafo-família;
+    font-size: $tipografia-descrição-parágrafo-tamanho;
+    font-weight: $tipografia-descrição-parágrafo-peso;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ------ @mixins do cabeçalho. */
+
+@mixin input-de-pesquisa{
+    background: $cor-terceária;
+    border: none;
+    color: $cor-quaternária-opaca;
+    font-family: $tipografia-placeholder-família;
+    font-size: $tipografia-placeholder-tamanho;
+    font-style: italic;
+    font-weight: $tipografia-placeholder-peso;
+    height: 48px;
+    outline: none;
+    padding: 0px 16px;
+    width: 216px;
+}
+
+@mixin ícone-input-de-pesquisa{
+    @include ícone();
+    color: $cor-quaternária-opaca;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin botão-do-cabeçalho{
+    @include grid-em-linha();
+    background: none;
+    border: solid 1px $cor-quaternária;
+    color: $cor-quaternária;
+    column-gap: 0px;
+    font-family: $tipografia-botão-cabeçalho-família;
+    font-size: $tipografia-botão-cabeçalho-tamanho;
+    font-weight: $tipografia-botão-cabeçalho-peso;
+    height: 48px;
+    padding: 0px 16px;
+    width: 160px;
+}
+
+/* ------ @mixins do corpo. */
+
+@mixin ruído{
+    background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+    height: calc(84px + 496px);
+    left: 0px;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+@mixin botão-geral{
+    @include ícone();
+    background-color: $cor-terceária;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+@mixin botão-do-corpo{
+    @include grid-em-linha();
+    background: $cor-quaternária;
+    border: none;
+    border-radius: 8px;
+    color: $cor-terceária;
+    column-gap: 0px;
+    font-family: $tipografia-botão-corpo-família;
+    font-size: $tipografia-botão-corpo-tamanho;
+    font-weight: $tipografia-botão-corpo-peso;
+    height: 48px;
+    padding: 0px 16px;
+}
+
+@mixin decoração-animada{
+    height: 320px;
+    object-fit: none;
+    width: 100%;
+}

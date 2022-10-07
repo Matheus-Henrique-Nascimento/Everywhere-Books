@@ -1,212 +1,6 @@
-/* --- Informações básicas: variáveis. */
-
-/* ------ Cores. */
-
-$cor-primária: #D7CCC8;
-$cor-secundária: #A69B97;
-$cor-terceária: #FFFFFB;
-$cor-quaternária: #171717;
-$cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
-
-/* ------ Tipografia. */
-
-$tipografia-logo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-logo-tamanho: 24px;
-$tipografia-logo-peso: bold;
-
-$tipografia-endereços-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-endereços-tamanho: 12px;
-$tipografia-endereços-peso: initial;
-
-$tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-placeholder-tamanho: 12px;
-$tipografia-placeholder-peso: initial;
-
-$tipografia-botão-cabeçalho-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-botão-cabeçalho-tamanho: 12px;
-$tipografia-botão-cabeçalho-peso: initial;
-
-$tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-botão-corpo-tamanho: 16px;
-$tipografia-botão-corpo-peso: bold;
-
-$tipografia-ícone-tamanho: 20px;
-$tipografia-ícone-peso: initial;
-
-$tipografia-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-título-tamanho: 48px;
-$tipografia-título-peso: bold;
-
-$tipografia-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-parágrafo-tamanho: 32px;
-$tipografia-parágrafo-peso: initial;
-
-$tipografia-descrição-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-descrição-título-tamanho: 24px;
-$tipografia-descrição-título-peso: bold;
-
-$tipografia-descrição-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-descrição-parágrafo-tamanho: 16px;
-$tipografia-descrição-parágrafo-peso: initial;
-
-/* ------ Resonsividade. */
-
-$responsividade-média: 1260px;
-
-/* ------ @mixins gerais. */
-
-@mixin grid-em-linha{
-    align-items: center;
-    column-gap: 16px;
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-}
-
-@mixin grid-em-linhas-e-colunas{
-    column-gap: 256px;
-    display: grid;
-    grid-template-columns: repeat(4, 180px);
-    justify-content: center;
-    row-gap: 80px;
-}
-
-/* ------ @mixins tipográficos. */
-
-@mixin logo{
-    color: $cor-quaternária;
-    font-family: $tipografia-logo-família;
-    font-size: $tipografia-logo-tamanho;
-    font-weight: $tipografia-logo-peso;
-}
-
-@mixin links{
-    color: $cor-quaternária;
-    font-family: $tipografia-endereços-família;
-    font-size: $tipografia-endereços-tamanho;
-    font-weight: $tipografia-endereços-peso;
-}
-
-@mixin ícone{
-    color: $cor-quaternária;
-    cursor: pointer;
-    font-size: $tipografia-ícone-tamanho;
-    font-weight: $tipografia-ícone-peso;
-}
-
-@mixin título{
-    color: $cor-quaternária;
-    font-family: $tipografia-título-família;
-    font-size: $tipografia-título-tamanho;
-    font-weight: $tipografia-título-peso;
-}
-
-@mixin parágrafo{
-    color: $cor-quaternária;
-    font-family: $tipografia-parágrafo-família;
-    font-size: $tipografia-parágrafo-tamanho;
-    font-weight: $tipografia-parágrafo-peso;
-}
-
-@mixin descrição-título{
-    color: $cor-quaternária;
-    font-family: $tipografia-descrição-título-família;
-    font-size: $tipografia-descrição-título-tamanho;
-    font-weight: $tipografia-descrição-título-peso;
-}
-
-@mixin descrição-parágrafo{
-    color: $cor-quaternária-opaca;
-    font-family: $tipografia-descrição-parágrafo-família;
-    font-size: $tipografia-descrição-parágrafo-tamanho;
-    font-weight: $tipografia-descrição-parágrafo-peso;
-}
-
-/* ------ @mixins do cabeçalho. */
-
-@mixin input-de-pesquisa{
-    background: $cor-terceária;
-    border: none;
-    color: $cor-quaternária-opaca;
-    font-family: $tipografia-placeholder-família;
-    font-size: $tipografia-placeholder-tamanho;
-    font-style: italic;
-    font-weight: $tipografia-placeholder-peso;
-    height: 48px;
-    outline: none;
-    padding: 0px 16px;
-    width: 216px;
-}
-
-@mixin ícone-input-de-pesquisa{
-    @include ícone();
-    color: $cor-quaternária-opaca;
-    position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-@mixin botão-do-cabeçalho{
-    @include grid-em-linha();
-    background: none;
-    border: solid 1px $cor-quaternária;
-    color: $cor-quaternária;
-    column-gap: 0px;
-    font-family: $tipografia-botão-cabeçalho-família;
-    font-size: $tipografia-botão-cabeçalho-tamanho;
-    font-weight: $tipografia-botão-cabeçalho-peso;
-    height: 48px;
-    padding: 0px 16px;
-    width: 160px;
-}
-
-/* ------ @mixins do corpo. */
-
-@mixin botão-geral{
-    @include ícone();
-    background-color: $cor-terceária;
-    border-radius: 50%;
-    padding: 8px;
-}
-
-@mixin botão-do-corpo{
-    @include grid-em-linha();
-    background: $cor-quaternária;
-    border: none;
-    border-radius: 8px;
-    color: $cor-terceária;
-    column-gap: 0px;
-    font-family: $tipografia-botão-corpo-família;
-    font-size: $tipografia-botão-corpo-tamanho;
-    font-weight: $tipografia-botão-corpo-peso;
-    height: 48px;
-    padding: 0px 16px;
-}
-
-@mixin decoração-animada{
-    height: 320px;
-    object-fit: none;
-    width: 100%;
-}
+@import "_abstracts.scss";
 
 /* --- Código básico. */
-
-#ruído{
-    background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
-    height: calc(84px + 496px);
-    mix-blend-mode: soft-light;
-    position: absolute;
-    top: 96px;
-    width: 100vw;
-    z-index: -1;
-}
-
-@media only screen and (max-width: $responsividade-média){
-    #ruído{
-        height: calc(84px + 819px);
-    }
-}
 
 body{
     background-color: $cor-primária;
@@ -281,6 +75,7 @@ header{
     @include grid-em-linha();
     justify-content: end;
     padding: 16px 32px;
+    position: relative;
 
     span{
         @include botão-geral();
@@ -298,10 +93,25 @@ header{
     }
 }
 
+/* --- Ruído entrada inicial. */
+
+#ruído-entrada-inicial{
+    @include ruído();
+}
+
+/* --- Responsividade do ruído. */
+
+@media only screen and (max-width: $responsividade-média){
+    #ruído-entrada-inicial{
+        height: calc(84px + 819px);
+    }
+}
+
 /* --- Entrada inicial. */
 
 #main-entrada-inicial{
     @include grid-em-linha();
+    border-bottom: solid 1px $cor-quaternária;
     padding: 80px;
     text-align: start;
 
@@ -351,9 +161,10 @@ header{
 
 /* --- Decoração-animada. */
 
-#main-decoração-animada{
+.main-decoração-animada{
     img{
         @include decoração-animada();
+        border-bottom: solid 1px $cor-quaternária;
     }
 }
 
@@ -361,7 +172,9 @@ header{
 
 #main-newsletter{
     @include grid-em-linha();
+    border-bottom: solid 1px $cor-quaternária;
     padding: 80px;
+    position: relative;
     text-align: end;
 
     #main-newsletter-informações{
@@ -408,10 +221,26 @@ header{
     }
 }
 
+/* --- Ruído newsletter. */
+
+#ruído-newsletter{
+    @include ruído();
+    height: 529px;
+}
+
+/* --- Responsividade do ruído. */
+
+@media only screen and (max-width: $responsividade-média){
+    #ruído-newsletter{
+        height: 852px;
+    }
+}
+
 /* --- Carrossel de livros. */
 
 #main-carrossel-de-livros{
-    padding: 0px 80px 0px 80px;
+    border-bottom: solid 1px $cor-quaternária;
+    padding: 80px 80px 0px 80px;
 
     h2{
         @include título();
@@ -421,10 +250,6 @@ header{
 
     #main-carrossel-área-dos-livros{
         @include grid-em-linhas-e-colunas();
-
-        /* Esses dois elementos serão retirados quando eu fizer o carrossel com Javascript. */
-        overflow: hidden;
-        width: 100%;
 
         .main-carrossel-livro{
             @include grid-em-linha();
@@ -440,10 +265,12 @@ header{
     
             h3{
                 @include descrição-título();
+                width: 160px;
             }
     
             p{
                 @include descrição-parágrafo();
+                width: 160px;
             }
     
             button{
@@ -458,12 +285,165 @@ header{
         }
     }
 
-    #main-carrossel-botões{
+    .main-carrossel-botões{
         @include grid-em-linha();
         justify-content: center;
         padding: 80px;
 
-        span{@include ícone();}
+        span{
+            @include ícone();
+            background-color: $cor-quaternária;
+            border-radius: 50%;
+            color: $cor-terceária;
+            padding: 8px;
+        }
+
+        button{
+            @include botão-do-corpo();
+
+            span{
+                @include ícone();
+                margin-left: 16px;
+                color: $cor-terceária;
+            }
+        }
+    }
+}
+
+/* --- Promoção. */
+
+#main-promoção{
+    @include grid-em-linha();
+    border-bottom: solid 1px $cor-quaternária;
+    padding: 80px;
+    position: relative;
+    text-align: start;
+
+    #main-promoção-informações{
+        @include grid-em-linha();
+        gap: 32px;
+        grid-auto-flow: row;
+        justify-items: start;
+        order: 1;
+        width: 640px;
+
+        h2{@include título();}
+
+        p{@include parágrafo();}
+
+        button{
+            @include botão-do-corpo();
+
+            span{
+                @include ícone();
+                margin-left: 16px;
+                color: $cor-terceária;
+            }
+        }
+    }
+
+    #main-promoção-gif{
+        order: 2;
+
+        img{height: 320px;}
+    }
+}
+
+/* --- Responsividade da promoção. */
+
+@media only screen and (max-width: $responsividade-média){
+    #main-promoção{
+        grid-auto-flow: row;
+        justify-content: center;
+        text-align: center;
+
+        #main-promoção-informações{
+            button{justify-self: center;}
+        }
+    }
+}
+
+/* --- Ruído promoção. */
+
+#ruído-promoção{
+    @include ruído();
+    height: 561px;
+}
+
+/* --- Responsividade do ruído. */
+
+@media only screen and (max-width: $responsividade-média){
+    #ruído-promoção{
+        height: 884px;
+    }
+}
+
+/* --- Carrossel de artigos. */
+
+#main-carrossel-de-artigos{
+    border-bottom: solid 1px $cor-quaternária;
+    padding: 80px 80px 0px 80px;
+
+    h2{
+        @include título();
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    #main-carrossel-área-dos-artigos{
+        @include grid-em-linhas-e-colunas();
+        column-gap: 144px;
+        grid-template-columns: repeat(auto-fill, 480px);
+
+        .main-carrossel-artigo{
+            @include grid-em-linha();
+            column-gap: 0px;
+            grid-auto-flow: row;
+            justify-items: center;
+            row-gap: 16px;
+            text-align: center;
+    
+            img{
+                height: 320px;
+                object-fit: cover;
+                object-position: center center;
+                width: 480px;
+            }
+
+            h3{
+                @include descrição-título();
+                width: 480px;
+            }
+    
+            p{
+                @include descrição-parágrafo();
+                width: 480px;
+            }
+    
+            button{
+                @include botão-do-corpo();
+    
+                span{
+                    @include ícone();
+                    margin-left: 16px;
+                    color: $cor-terceária;
+                }
+            }
+        }
+    }
+
+    .main-carrossel-botões{
+        @include grid-em-linha();
+        justify-content: center;
+        padding: 80px;
+
+        span{
+            @include ícone();
+            background-color: $cor-quaternária;
+            border-radius: 50%;
+            color: $cor-terceária;
+            padding: 8px;
+        }
 
         button{
             @include botão-do-corpo();
