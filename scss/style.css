@@ -8,10 +8,23 @@
 /* ------ @mixins do cabeçalho. */
 /* ------ @mixins do corpo. */
 /* --- Código básico. */
+#ruído {
+  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+  height: 580px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 96px;
+  width: 100vw;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 1260px) {
+  #ruído {
+    height: 903px;
+  }
+}
 body {
   background-color: #D7CCC8;
-  display: grid;
-  grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial" "primeira-decoração-animada" "newsletter" "carrossel-de-livros";
 }
 
 /* --- Cabeçalho. */
@@ -23,7 +36,6 @@ header {
   grid-auto-flow: column;
   justify-content: space-between;
   border-bottom: solid 1px #171717;
-  grid-area: cabeçalho;
   height: 96px;
   padding: 16px 32px;
 }
@@ -152,7 +164,6 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  grid-area: botões-gerais;
   justify-content: end;
   padding: 16px 32px;
 }
@@ -188,8 +199,8 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  grid-area: entrada-inicial;
   padding: 80px;
+  text-align: start;
 }
 #main-entrada-inicial #main-entrada-inicial-informações {
   align-items: center;
@@ -201,8 +212,8 @@ header #header-endereços-pesquisa-perfil button span {
   gap: 32px;
   grid-auto-flow: row;
   justify-items: start;
-  width: 640px;
   order: 1;
+  width: 640px;
 }
 #main-entrada-inicial #main-entrada-inicial-informações h2 {
   color: #171717;
@@ -234,7 +245,6 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: bold;
   height: 48px;
   padding: 0px 16px;
-  justify-self: start;
 }
 #main-entrada-inicial #main-entrada-inicial-informações button span {
   color: #171717;
@@ -258,17 +268,11 @@ header #header-endereços-pesquisa-perfil button span {
     justify-content: center;
     text-align: center;
   }
-  #main-entrada-inicial #main-entrada-inicial-informações {
-    justify-items: center;
-  }
   #main-entrada-inicial #main-entrada-inicial-informações button {
     justify-self: center;
   }
 }
 /* --- Decoração-animada. */
-#main-decoração-animada {
-  grid-area: primeira-decoração-animada;
-}
 #main-decoração-animada img {
   height: 320px;
   -o-object-fit: none;
@@ -284,8 +288,8 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  grid-area: newsletter;
   padding: 80px;
+  text-align: end;
 }
 #main-newsletter #main-newsletter-informações {
   align-items: center;
@@ -298,7 +302,6 @@ header #header-endereços-pesquisa-perfil button span {
   grid-auto-flow: row;
   justify-items: end;
   order: 2;
-  text-align: end;
   width: 640px;
 }
 #main-newsletter #main-newsletter-informações h2 {
@@ -354,17 +357,13 @@ header #header-endereços-pesquisa-perfil button span {
     justify-content: center;
     text-align: center;
   }
-  #main-newsletter #main-newsletter-informações {
-    justify-items: center;
-  }
   #main-newsletter #main-newsletter-informações button {
     justify-self: center;
   }
 }
 /* --- Carrossel de livros. */
 #main-carrossel-de-livros {
-  grid-area: carrossel-de-livros;
-  padding: 0px 80px 80px 80px;
+  padding: 0px 80px 0px 80px;
 }
 #main-carrossel-de-livros h2 {
   color: #171717;
@@ -381,6 +380,9 @@ header #header-endereços-pesquisa-perfil button span {
   grid-template-columns: repeat(4, 180px);
   justify-content: center;
   row-gap: 80px;
+  /* Esses dois elementos serão retirados quando eu fizer o carrossel com Javascript. */
+  overflow: hidden;
+  width: 100%;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro {
   align-items: center;
@@ -389,8 +391,11 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
   grid-auto-flow: row;
   justify-items: center;
+  row-gap: 16px;
   text-align: center;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro img {
@@ -409,8 +414,72 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro button {
-  /*@include botão-preenchido();*/
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro button span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  margin-left: 16px;
+  color: #FFFFFB;
+}
+#main-carrossel-de-livros #main-carrossel-botões {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  justify-content: center;
+  padding: 80px;
+}
+#main-carrossel-de-livros #main-carrossel-botões span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
 }
 #main-carrossel-de-livros #main-carrossel-botões button {
-  /*@include botão-preenchido();*/
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-livros #main-carrossel-botões button span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  margin-left: 16px;
+  color: #FFFFFB;
 }/*# sourceMappingURL=style.css.map */

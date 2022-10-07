@@ -192,10 +192,24 @@ $responsividade-média: 1260px;
 
 /* --- Código básico. */
 
+#ruído{
+    background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+    height: calc(84px + 496px);
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 96px;
+    width: 100vw;
+    z-index: -1;
+}
+
+@media only screen and (max-width: $responsividade-média){
+    #ruído{
+        height: calc(84px + 819px);
+    }
+}
+
 body{
     background-color: $cor-primária;
-    display: grid;
-    grid-template-areas: "cabeçalho" "botões-gerais" "entrada-inicial" "primeira-decoração-animada" "newsletter" "carrossel-de-livros";
 }
 
 /* --- Cabeçalho. */
@@ -203,7 +217,6 @@ body{
 header{
     @include grid-em-linha();
     border-bottom: solid 1px $cor-quaternária;
-    grid-area: cabeçalho;
     height: 96px;
     padding: 16px 32px;
 
@@ -266,7 +279,6 @@ header{
 
 #main-botões-gerais{
     @include grid-em-linha();
-    grid-area: botões-gerais;
     justify-content: end;
     padding: 16px 32px;
 
@@ -290,16 +302,16 @@ header{
 
 #main-entrada-inicial{
     @include grid-em-linha();
-    grid-area: entrada-inicial;
     padding: 80px;
+    text-align: start;
 
     #main-entrada-inicial-informações{
         @include grid-em-linha();
         gap: 32px;
         grid-auto-flow: row;
         justify-items: start;
-        width: 640px;
         order: 1;
+        width: 640px;
 
         h2{@include título();}
 
@@ -307,7 +319,6 @@ header{
 
         button{
             @include botão-do-corpo();
-            justify-self: start;
 
             span{
                 @include ícone();
@@ -333,8 +344,6 @@ header{
         text-align: center;
 
         #main-entrada-inicial-informações{
-            justify-items: center;
-
             button{justify-self: center;}
         }
     }
@@ -343,8 +352,6 @@ header{
 /* --- Decoração-animada. */
 
 #main-decoração-animada{
-    grid-area: primeira-decoração-animada;
-    
     img{
         @include decoração-animada();
     }
@@ -354,8 +361,8 @@ header{
 
 #main-newsletter{
     @include grid-em-linha();
-    grid-area: newsletter;
     padding: 80px;
+    text-align: end;
 
     #main-newsletter-informações{
         @include grid-em-linha();
@@ -363,16 +370,11 @@ header{
         grid-auto-flow: row;
         justify-items: end;
         order: 2;
-        text-align: end;
         width: 640px;
 
-        h2{
-            @include título();
-        }
+        h2{@include título();}
 
-        p{
-            @include parágrafo();
-        }
+        p{@include parágrafo();}
 
         button{
             @include botão-do-corpo();
@@ -384,12 +386,11 @@ header{
             }
         }
     }
+
     #main-newsletter-gif{
         order: 1;
 
-        img{
-            height: 320px;
-        }
+        img{height: 320px;}
     }
 }
 
@@ -402,8 +403,6 @@ header{
         text-align: center;
 
         #main-newsletter-informações{
-            justify-items: center;
-
             button{justify-self: center;}
         }
     }
@@ -412,8 +411,7 @@ header{
 /* --- Carrossel de livros. */
 
 #main-carrossel-de-livros{
-    grid-area: carrossel-de-livros;
-    padding: 0px 80px 80px 80px;
+    padding: 0px 80px 0px 80px;
 
     h2{
         @include título();
@@ -424,10 +422,16 @@ header{
     #main-carrossel-área-dos-livros{
         @include grid-em-linhas-e-colunas();
 
+        /* Esses dois elementos serão retirados quando eu fizer o carrossel com Javascript. */
+        overflow: hidden;
+        width: 100%;
+
         .main-carrossel-livro{
             @include grid-em-linha();
+            column-gap: 0px;
             grid-auto-flow: row;
             justify-items: center;
+            row-gap: 16px;
             text-align: center;
     
             img{
@@ -443,18 +447,32 @@ header{
             }
     
             button{
-                /*@include botão-preenchido();*/
+                @include botão-do-corpo();
+    
+                span{
+                    @include ícone();
+                    margin-left: 16px;
+                    color: $cor-terceária;
+                }
             }
         }
     }
 
     #main-carrossel-botões{
-        span{
-            
-        }
+        @include grid-em-linha();
+        justify-content: center;
+        padding: 80px;
+
+        span{@include ícone();}
 
         button{
-            /*@include botão-preenchido();*/
+            @include botão-do-corpo();
+
+            span{
+                @include ícone();
+                margin-left: 16px;
+                color: $cor-terceária;
+            }
         }
     }
 }
