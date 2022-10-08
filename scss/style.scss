@@ -162,6 +162,8 @@ header{
 /* --- Decoração-animada. */
 
 .main-decoração-animada{
+    height: 320px;
+
     img{
         @include decoração-animada();
         border-bottom: solid 1px $cor-quaternária;
@@ -258,24 +260,26 @@ header{
             justify-items: center;
             row-gap: 16px;
             text-align: center;
-    
+
             img{
+                object-fit: cover;
+                object-position: center center;
                 width: 160px;
             }
-    
+
             h3{
                 @include descrição-título();
                 width: 160px;
             }
-    
+
             p{
                 @include descrição-parágrafo();
                 width: 160px;
             }
-    
+
             button{
                 @include botão-do-corpo();
-    
+
                 span{
                     @include ícone();
                     margin-left: 16px;
@@ -402,7 +406,7 @@ header{
             justify-items: center;
             row-gap: 16px;
             text-align: center;
-    
+
             img{
                 height: 320px;
                 object-fit: cover;
@@ -414,15 +418,15 @@ header{
                 @include descrição-título();
                 width: 480px;
             }
-    
+
             p{
                 @include descrição-parágrafo();
                 width: 480px;
             }
-    
+
             button{
                 @include botão-do-corpo();
-    
+
                 span{
                     @include ícone();
                     margin-left: 16px;

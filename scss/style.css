@@ -278,6 +278,9 @@ header #header-endereços-pesquisa-perfil button span {
   }
 }
 /* --- Decoração-animada. */
+.main-decoração-animada {
+  height: 320px;
+}
 .main-decoração-animada img {
   height: 320px;
   -o-object-fit: none;
@@ -405,7 +408,7 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-column-gap: 256px;
        column-gap: 256px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
+  grid-template-columns: repeat(auto-fill, 160px);
   justify-content: center;
   row-gap: 80px;
 }
@@ -424,6 +427,10 @@ header #header-endereços-pesquisa-perfil button span {
   text-align: center;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
   width: 160px;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro h3 {
@@ -640,7 +647,7 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-column-gap: 256px;
        column-gap: 256px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 180px);
+  grid-template-columns: repeat(auto-fill, 160px);
   justify-content: center;
   row-gap: 80px;
   -moz-column-gap: 144px;

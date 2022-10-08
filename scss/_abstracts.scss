@@ -66,7 +66,7 @@ $responsividade-média: 1260px;
 @mixin grid-em-linhas-e-colunas{
     column-gap: 256px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 180px);
+    grid-template-columns: repeat(auto-fill, 160px);
     justify-content: center;
     row-gap: 80px;
 }
