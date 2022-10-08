@@ -2,9 +2,7 @@
 
 /* --- Código básico. */
 
-body{
-    background-color: $cor-primária;
-}
+body{background-color: $cor-primária;}
 
 /* --- Cabeçalho. */
 
@@ -14,9 +12,7 @@ header{
     height: 96px;
     padding: 16px 32px;
 
-    #header-logo{
-        h1{@include logo();}
-    }
+    #header-logo{h1{@include logo();}}
 
     #header-endereços-pesquisa-perfil{
         @include grid-em-linha();
@@ -26,9 +22,7 @@ header{
             a{@include links();}
         }
 
-        #header-endereços-organização-responsiva{
-            display: none;
-        }
+        #header-endereços-organização-responsiva{display: none;}
 
         #header-área-de-busca{
             position: relative;
@@ -45,26 +39,19 @@ header{
 
 @media only screen and (max-width: $responsividade-média){
     header{
-
         #header-endereços-pesquisa-perfil{
             @include grid-em-linha();
 
-            #header-endereços-organização-padrão{ 
-                display: none;
-            }
+            #header-endereços-organização-padrão{display: none;}
 
             #header-endereços-organização-responsiva{
                 @include grid-em-linha();
                 span{@include ícone();}
             }
 
-            #header-área-de-busca{
-                display: none;
-            }
+            #header-área-de-busca{display: none;}
 
-            button{
-                display: none;
-            }
+            button{display: none;}
         }
     }
 }
@@ -77,9 +64,7 @@ header{
     padding: 16px 32px;
     position: relative;
 
-    span{
-        @include botão-geral();
-    }
+    span{@include botão-geral();}
 
     #main-botões-interruptor{
         @include grid-em-linha();
@@ -87,24 +72,12 @@ header{
         border-radius: 100px;
         padding: 8px;
 
-        span:first-child{
-            background-color: $cor-primária;
-        }
+        span:first-child{background-color: $cor-primária;}
     }
-}
 
-/* --- Ruído entrada inicial. */
+    #ruído-entrada-inicial{@include ruído();}
 
-#ruído-entrada-inicial{
-    @include ruído();
-}
-
-/* --- Responsividade do ruído. */
-
-@media only screen and (max-width: $responsividade-média){
-    #ruído-entrada-inicial{
-        height: calc(84px + 819px);
-    }
+    @media only screen and (max-width: $responsividade-média){#ruído-entrada-inicial{height: calc(84px + 819px);}}
 }
 
 /* --- Entrada inicial. */
@@ -153,9 +126,7 @@ header{
         justify-content: center;
         text-align: center;
 
-        #main-entrada-inicial-informações{
-            button{justify-self: center;}
-        }
+        #main-entrada-inicial-informações{button{justify-self: center;}}
     }
 }
 
@@ -207,6 +178,11 @@ header{
 
         img{height: 320px;}
     }
+
+    #ruído-newsletter{
+        @include ruído();
+        height: 529px;
+    }
 }
 
 /* --- Responsividade da newsletter. */
@@ -217,24 +193,9 @@ header{
         justify-content: center;
         text-align: center;
 
-        #main-newsletter-informações{
-            button{justify-self: center;}
-        }
-    }
-}
+        #main-newsletter-informações{button{justify-self: center;}}
 
-/* --- Ruído newsletter. */
-
-#ruído-newsletter{
-    @include ruído();
-    height: 529px;
-}
-
-/* --- Responsividade do ruído. */
-
-@media only screen and (max-width: $responsividade-média){
-    #ruído-newsletter{
-        height: 852px;
+        #ruído-newsletter{ height: 852px;}
     }
 }
 
@@ -351,6 +312,11 @@ header{
 
         img{height: 320px;}
     }
+
+    #ruído-promoção{
+        @include ruído();
+        height: 561px;
+    }
 }
 
 /* --- Responsividade da promoção. */
@@ -361,24 +327,9 @@ header{
         justify-content: center;
         text-align: center;
 
-        #main-promoção-informações{
-            button{justify-self: center;}
-        }
-    }
-}
+        #main-promoção-informações{button{justify-self: center;}}
 
-/* --- Ruído promoção. */
-
-#ruído-promoção{
-    @include ruído();
-    height: 561px;
-}
-
-/* --- Responsividade do ruído. */
-
-@media only screen and (max-width: $responsividade-média){
-    #ruído-promoção{
-        height: 884px;
+        #ruído-promoção{height: 884px;}
     }
 }
 
@@ -464,24 +415,31 @@ header{
 /* --- Rodapé. */
 
 footer{
+    @include grid-em-linha();
+    column-gap: 0px;
+    grid-auto-flow: row;
+    justify-content: center;
+    padding: 80px 0px;
+    position: relative;
+    row-gap: 80px;
+
     #footer-inscrição-da-newsletter{
         @include grid-em-linha();
-        padding: 80px;
-    
+
         h2{@include título();}
-    
+
         #footer-email-botão{
             @include grid-em-linha();
-    
+
             #footer-área-do-email{
                 position: relative;
                 input[type="text"]{@include input-de-email();}
                 span{@include ícone-input-de-email();}
             }
-    
+
             button{
                 @include botão-do-corpo();
-    
+
                 span{
                     @include ícone();
                     margin-left: 16px;
@@ -494,11 +452,84 @@ footer{
     #footer-serviços-contatos{
         @include grid-em-linha();
 
-        #footer-serviços{
+        #footer-informações{
             @include grid-em-linha();
-            a{@include links();}
+            column-gap: 64px;
+
+            #footer-serviços{
+                @include grid-em-linha();
+                column-gap: 0px;
+                grid-auto-flow: row;
+                row-gap: 32px;
+
+                h3{@include descrição-título();}
+
+                a{
+                    @include grid-em-linha();
+                    @include links();
+                    justify-content: start;
+
+                    span{@include ícone();}
+                }
+            }
+
+            #footer-contatos{
+                @include grid-em-linha();
+                column-gap: 0px;
+                grid-auto-flow: row;
+                row-gap: 32px;
+
+                h3{@include descrição-título();}
+
+                li{
+                    @include grid-em-linha();
+                    @include links();
+                    justify-content: start;
+
+                    span{@include ícone();}
+                }
+            }
         }
 
         img{height: 320px;}
+    }
+
+    #footer-direitos-autorais{
+        p{
+            @include grid-em-linha();
+            @include descrição-parágrafo();
+            color: $cor-quaternária;
+            justify-content: center;
+
+            span{
+                @include ícone();
+                color: $cor-quaternária;
+            }
+        }
+    }
+
+    #papel{@include papel();}
+}
+
+/* --- Responsividade do rodapé. */
+
+@media only screen and (max-width: $responsividade-média){
+    footer{
+        #footer-inscrição-da-newsletter{
+            grid-auto-flow: row;
+            justify-content: center;
+            row-gap: 32px;
+
+            #footer-email-botão{
+                #footer-área-do-email{input[type="text"]{width: 560px;}}
+            }
+        }
+
+        #footer-serviços-contatos{
+            grid-auto-flow: row;
+            justify-content: center;
+        }
+
+        #papel{height: 924px;}
     }
 }

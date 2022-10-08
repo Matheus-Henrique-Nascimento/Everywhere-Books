@@ -177,10 +177,8 @@ header #header-endereços-pesquisa-perfil button span {
 #main-botões-gerais #main-botões-interruptor span:first-child {
   background-color: #D7CCC8;
 }
-
-/* --- Ruído entrada inicial. */
-#ruído-entrada-inicial {
-  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
+#main-botões-gerais #ruído-entrada-inicial {
+  background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
   height: 580px;
   left: 0px;
   mix-blend-mode: soft-light;
@@ -189,13 +187,12 @@ header #header-endereços-pesquisa-perfil button span {
   width: 100%;
   z-index: -1;
 }
-
-/* --- Responsividade do ruído. */
 @media only screen and (max-width: 1260px) {
-  #ruído-entrada-inicial {
+  #main-botões-gerais #ruído-entrada-inicial {
     height: 903px;
   }
 }
+
 /* --- Entrada inicial. */
 #main-entrada-inicial {
   align-items: center;
@@ -361,6 +358,17 @@ header #header-endereços-pesquisa-perfil button span {
 #main-newsletter #main-newsletter-gif img {
   height: 320px;
 }
+#main-newsletter #ruído-newsletter {
+  background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
+  height: 580px;
+  left: 0px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+  height: 529px;
+}
 
 /* --- Responsividade da newsletter. */
 @media only screen and (max-width: 1260px) {
@@ -372,23 +380,7 @@ header #header-endereços-pesquisa-perfil button span {
   #main-newsletter #main-newsletter-informações button {
     justify-self: center;
   }
-}
-/* --- Ruído newsletter. */
-#ruído-newsletter {
-  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
-  height: 580px;
-  left: 0px;
-  mix-blend-mode: soft-light;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: -1;
-  height: 529px;
-}
-
-/* --- Responsividade do ruído. */
-@media only screen and (max-width: 1260px) {
-  #ruído-newsletter {
+  #main-newsletter #ruído-newsletter {
     height: 852px;
   }
 }
@@ -600,6 +592,17 @@ header #header-endereços-pesquisa-perfil button span {
 #main-promoção #main-promoção-gif img {
   height: 320px;
 }
+#main-promoção #ruído-promoção {
+  background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
+  height: 580px;
+  left: 0px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+  height: 561px;
+}
 
 /* --- Responsividade da promoção. */
 @media only screen and (max-width: 1260px) {
@@ -611,23 +614,7 @@ header #header-endereços-pesquisa-perfil button span {
   #main-promoção #main-promoção-informações button {
     justify-self: center;
   }
-}
-/* --- Ruído promoção. */
-#ruído-promoção {
-  background-image: url("../Material-Gráfico/Ruído/Ruído.gif");
-  height: 580px;
-  left: 0px;
-  mix-blend-mode: soft-light;
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  z-index: -1;
-  height: 561px;
-}
-
-/* --- Responsividade do ruído. */
-@media only screen and (max-width: 1260px) {
-  #ruído-promoção {
+  #main-promoção #ruído-promoção {
     height: 884px;
   }
 }
@@ -773,6 +760,21 @@ header #header-endereços-pesquisa-perfil button span {
 }
 
 /* --- Rodapé. */
+footer {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  grid-auto-flow: row;
+  justify-content: center;
+  padding: 80px 0px;
+  position: relative;
+  row-gap: 80px;
+}
 footer #footer-inscrição-da-newsletter {
   align-items: center;
   -moz-column-gap: 16px;
@@ -780,7 +782,6 @@ footer #footer-inscrição-da-newsletter {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  padding: 80px;
 }
 footer #footer-inscrição-da-newsletter h2 {
   color: #171717;
@@ -858,20 +859,149 @@ footer #footer-serviços-contatos {
   grid-auto-flow: column;
   justify-content: space-between;
 }
-footer #footer-serviços-contatos #footer-serviços {
+footer #footer-serviços-contatos #footer-informações {
   align-items: center;
   -moz-column-gap: 16px;
        column-gap: 16px;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
+  -moz-column-gap: 64px;
+       column-gap: 64px;
 }
-footer #footer-serviços-contatos #footer-serviços a {
+footer #footer-serviços-contatos #footer-informações #footer-serviços {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  grid-auto-flow: row;
+  row-gap: 32px;
+}
+footer #footer-serviços-contatos #footer-informações #footer-serviços h3 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+footer #footer-serviços-contatos #footer-informações #footer-serviços a {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
   color: #171717;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 12px;
   font-weight: initial;
+  justify-content: start;
+}
+footer #footer-serviços-contatos #footer-informações #footer-serviços a span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+}
+footer #footer-serviços-contatos #footer-informações #footer-contatos {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  grid-auto-flow: row;
+  row-gap: 32px;
+}
+footer #footer-serviços-contatos #footer-informações #footer-contatos h3 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+footer #footer-serviços-contatos #footer-informações #footer-contatos li {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: initial;
+  justify-content: start;
+}
+footer #footer-serviços-contatos #footer-informações #footer-contatos li span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
 }
 footer #footer-serviços-contatos img {
   height: 320px;
+}
+footer #footer-direitos-autorais p {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  color: rgba(23, 23, 23, 0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: initial;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #171717;
+  justify-content: center;
+}
+footer #footer-direitos-autorais p span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  color: #171717;
+}
+footer #papel {
+  background-image: url("../Material-Gráfico/Gifs-de-Fundo/Papel.gif");
+  height: 708px;
+  left: 0px;
+  mix-blend-mode: soft-light;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
+/* --- Responsividade do rodapé. */
+@media only screen and (max-width: 1260px) {
+  footer #footer-inscrição-da-newsletter {
+    grid-auto-flow: row;
+    justify-content: center;
+    row-gap: 32px;
+  }
+  footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-email input[type=text] {
+    width: 560px;
+  }
+  footer #footer-serviços-contatos {
+    grid-auto-flow: row;
+    justify-content: center;
+  }
+  footer #papel {
+    height: 924px;
+  }
 }/*# sourceMappingURL=style.css.map */
