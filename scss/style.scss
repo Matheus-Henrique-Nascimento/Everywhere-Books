@@ -460,3 +460,45 @@ header{
         }
     }
 }
+
+/* --- Rodapé. */
+
+footer{
+    #footer-inscrição-da-newsletter{
+        @include grid-em-linha();
+        padding: 80px;
+    
+        h2{@include título();}
+    
+        #footer-email-botão{
+            @include grid-em-linha();
+    
+            #footer-área-do-email{
+                position: relative;
+                input[type="text"]{@include input-de-email();}
+                span{@include ícone-input-de-email();}
+            }
+    
+            button{
+                @include botão-do-corpo();
+    
+                span{
+                    @include ícone();
+                    margin-left: 16px;
+                    color: $cor-terceária;
+                }
+            }
+        }
+    }
+
+    #footer-serviços-contatos{
+        @include grid-em-linha();
+
+        #footer-serviços{
+            @include grid-em-linha();
+            a{@include links();}
+        }
+
+        img{height: 320px;}
+    }
+}

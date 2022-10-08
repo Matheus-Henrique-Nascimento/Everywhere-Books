@@ -206,3 +206,28 @@ $responsividade-média: 1260px;
     object-fit: none;
     width: 100%;
 }
+
+/* ------ @mixins do rodapé. */
+
+@mixin input-de-email{
+    background: none;
+    border: solid 1px $cor-quaternária;
+    border-radius: 8px;
+    color: $cor-quaternária-opaca;
+    font-family: $tipografia-placeholder-família;
+    font-size: $tipografia-placeholder-tamanho;
+    font-weight: $tipografia-placeholder-peso;
+    height: 48px;
+    outline: none;
+    padding: 0px 16px;
+    width: 216px;
+}
+
+@mixin ícone-input-de-email{
+    @include ícone();
+    color: $cor-quaternária-opaca;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

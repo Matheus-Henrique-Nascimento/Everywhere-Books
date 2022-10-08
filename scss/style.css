@@ -7,6 +7,7 @@
 /* ------ @mixins tipográficos. */
 /* ------ @mixins do cabeçalho. */
 /* ------ @mixins do corpo. */
+/* ------ @mixins do rodapé. */
 /* --- Código básico. */
 body {
   background-color: #D7CCC8;
@@ -769,4 +770,108 @@ header #header-endereços-pesquisa-perfil button span {
   font-weight: initial;
   margin-left: 16px;
   color: #FFFFFB;
+}
+
+/* --- Rodapé. */
+footer #footer-inscrição-da-newsletter {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding: 80px;
+}
+footer #footer-inscrição-da-newsletter h2 {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-email {
+  position: relative;
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-email input[type=text] {
+  background: none;
+  border: solid 1px #171717;
+  border-radius: 8px;
+  color: rgba(23, 23, 23, 0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: initial;
+  height: 48px;
+  outline: none;
+  padding: 0px 16px;
+  width: 216px;
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-email span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  color: rgba(23, 23, 23, 0.5);
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão button {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  background: #171717;
+  border: none;
+  border-radius: 8px;
+  color: #FFFFFB;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 48px;
+  padding: 0px 16px;
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão button span {
+  color: #171717;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: initial;
+  margin-left: 16px;
+  color: #FFFFFB;
+}
+footer #footer-serviços-contatos {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+footer #footer-serviços-contatos #footer-serviços {
+  align-items: center;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+footer #footer-serviços-contatos #footer-serviços a {
+  color: #171717;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: initial;
+}
+footer #footer-serviços-contatos img {
+  height: 320px;
 }/*# sourceMappingURL=style.css.map */
