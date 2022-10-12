@@ -1,58 +1,55 @@
 /* --- Informações básicas: variáveis. */
 
-/* ------ Cores. */
+:root{
+    /* ------ Cores. */
 
-$cor-primária: #D7CCC8;
-$cor-secundária: #A69B97;
-$cor-terceária: #FFFFFB;
-$cor-quaternária: #171717;
-$cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
+    --cor-primária: #D7CCC8;
+    --cor-secundária: #A69B97;
+    --cor-terceária: #FFFFFB;
+    --cor-quaternária: #171717;
+    --cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
 
-$cor-primária-noturna: #D7CCC8;
-$cor-secundária-noturna: #A69B97;
-$cor-terceária-noturna: #FFFFFB;
-$cor-quaternária-noturna: #171717;
+    /* ------ Tipografia. */
 
-/* ------ Tipografia. */
+    --tipografia-logo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-logo-tamanho: 24px;
+    --tipografia-logo-peso: bold;
 
-$tipografia-logo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-logo-tamanho: 24px;
-$tipografia-logo-peso: bold;
+    --tipografia-endereços-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-endereços-tamanho: 12px;
+    --tipografia-endereços-peso: initial;
 
-$tipografia-endereços-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-endereços-tamanho: 12px;
-$tipografia-endereços-peso: initial;
+    --tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-placeholder-tamanho: 12px;
+    --tipografia-placeholder-peso: initial;
 
-$tipografia-placeholder-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-placeholder-tamanho: 12px;
-$tipografia-placeholder-peso: initial;
+    --tipografia-botão-cabeçalho-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-botão-cabeçalho-tamanho: 12px;
+    --tipografia-botão-cabeçalho-peso: initial;
 
-$tipografia-botão-cabeçalho-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-botão-cabeçalho-tamanho: 12px;
-$tipografia-botão-cabeçalho-peso: initial;
+    --tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-botão-corpo-tamanho: 16px;
+    --tipografia-botão-corpo-peso: bold;
 
-$tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-botão-corpo-tamanho: 16px;
-$tipografia-botão-corpo-peso: bold;
+    --tipografia-ícone-tamanho: 20px;
+    --tipografia-ícone-peso: initial;
 
-$tipografia-ícone-tamanho: 20px;
-$tipografia-ícone-peso: initial;
+    --tipografia-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-título-tamanho: 48px;
+    --tipografia-título-peso: bold;
 
-$tipografia-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-título-tamanho: 48px;
-$tipografia-título-peso: bold;
+    --tipografia-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-parágrafo-tamanho: 32px;
+    --tipografia-parágrafo-peso: initial;
 
-$tipografia-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-parágrafo-tamanho: 32px;
-$tipografia-parágrafo-peso: initial;
+    --tipografia-descrição-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-descrição-título-tamanho: 24px;
+    --tipografia-descrição-título-peso: bold;
 
-$tipografia-descrição-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-descrição-título-tamanho: 24px;
-$tipografia-descrição-título-peso: bold;
-
-$tipografia-descrição-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$tipografia-descrição-parágrafo-tamanho: 16px;
-$tipografia-descrição-parágrafo-peso: initial;
+    --tipografia-descrição-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-descrição-parágrafo-tamanho: 16px;
+    --tipografia-descrição-parágrafo-peso: initial;
+}
 
 /* ------ Resonsividade. */
 
@@ -89,59 +86,59 @@ $responsividade-média: 1260px;
 
 @mixin logo{
     @include não-seleção();
-    color: $cor-quaternária;
-    font-family: $tipografia-logo-família;
-    font-size: $tipografia-logo-tamanho;
-    font-weight: $tipografia-logo-peso;
+    color: var(--cor-quaternária);
+    font-family: var(--tipografia-logo-família);
+    font-size: var(--tipografia-logo-tamanho);
+    font-weight: var(--tipografia-logo-peso);
 }
 
 @mixin links{
     @include não-seleção();
-    color: $cor-quaternária;
-    font-family: $tipografia-endereços-família;
-    font-size: $tipografia-endereços-tamanho;
-    font-weight: $tipografia-endereços-peso;
+    color: var(--cor-quaternária);
+    font-family: var(--tipografia-endereços-família);
+    font-size: var(--tipografia-endereços-tamanho);
+    font-weight: var(--tipografia-endereços-peso);
 }
 
 @mixin ícone{
     @include não-seleção();
-    color: $cor-quaternária;
+    color: var(--cor-quaternária);
     cursor: pointer;
-    font-size: $tipografia-ícone-tamanho;
-    font-weight: $tipografia-ícone-peso;
+    font-size: var(--tipografia-ícone-tamanho);
+    font-weight: var(--tipografia-ícone-peso);
 }
 
 @mixin título{
     @include não-seleção();
-    color: $cor-quaternária;
-    font-family: $tipografia-título-família;
-    font-size: $tipografia-título-tamanho;
-    font-weight: $tipografia-título-peso;
+    color: var(--cor-quaternária);
+    font-family: var(--tipografia-título-família);
+    font-size: var(--tipografia-título-tamanho);
+    font-weight: var(--tipografia-título-peso);
 }
 
 @mixin parágrafo{
     @include não-seleção();
-    color: $cor-quaternária;
-    font-family: $tipografia-parágrafo-família;
-    font-size: $tipografia-parágrafo-tamanho;
-    font-weight: $tipografia-parágrafo-peso;
+    color: var(--cor-quaternária);
+    font-family: var(--tipografia-parágrafo-família);
+    font-size: var(--tipografia-parágrafo-tamanho);
+    font-weight: var(--tipografia-parágrafo-peso);
 }
 
 @mixin descrição-título{
-    color: $cor-quaternária;
-    font-family: $tipografia-descrição-título-família;
-    font-size: $tipografia-descrição-título-tamanho;
-    font-weight: $tipografia-descrição-título-peso;
+    color: var(--cor-quaternária);
+    font-family: var(--tipografia-descrição-título-família);
+    font-size: var(--tipografia-descrição-título-tamanho);
+    font-weight: var(--tipografia-descrição-título-peso);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 @mixin descrição-parágrafo{
-    color: $cor-quaternária-opaca;
-    font-family: $tipografia-descrição-parágrafo-família;
-    font-size: $tipografia-descrição-parágrafo-tamanho;
-    font-weight: $tipografia-descrição-parágrafo-peso;
+    color: var(--cor-quaternária-opaca);
+    font-family: var(--tipografia-descrição-parágrafo-família);
+    font-size: var(--tipografia-descrição-parágrafo-tamanho);
+    font-weight: var(--tipografia-descrição-parágrafo-peso);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -151,13 +148,13 @@ $responsividade-média: 1260px;
 
 @mixin input-de-pesquisa{
     @include não-seleção();
-    background: $cor-terceária;
+    background: var(--cor-terceária);
     border: none;
-    color: $cor-quaternária-opaca;
-    font-family: $tipografia-placeholder-família;
-    font-size: $tipografia-placeholder-tamanho;
+    color: var(--cor-quaternária-opaca);
+    font-family: var(--tipografia-placeholder-família);
+    font-size: var(--tipografia-placeholder-tamanho);
     font-style: italic;
-    font-weight: $tipografia-placeholder-peso;
+    font-weight: var(--tipografia-placeholder-peso);
     height: 48px;
     outline: none;
     padding: 0px 16px;
@@ -166,7 +163,7 @@ $responsividade-média: 1260px;
 
 @mixin ícone-input-de-pesquisa{
     @include ícone();
-    color: $cor-quaternária-opaca;
+    color: var(--cor-quaternária-opaca);
     position: absolute;
     right: 0px;
     top: 50%;
@@ -177,13 +174,13 @@ $responsividade-média: 1260px;
     @include grid-em-linha();
     @include não-seleção();
     background: none;
-    border: solid 1px $cor-quaternária;
-    color: $cor-quaternária;
+    border: solid 1px var(--cor-quaternária);
+    color: var(--cor-quaternária);
     column-gap: 0px;
     cursor: pointer;
-    font-family: $tipografia-botão-cabeçalho-família;
-    font-size: $tipografia-botão-cabeçalho-tamanho;
-    font-weight: $tipografia-botão-cabeçalho-peso;
+    font-family: var(--tipografia-botão-cabeçalho-família);
+    font-size: var(--tipografia-botão-cabeçalho-tamanho);
+    font-weight: var(--tipografia-botão-cabeçalho-peso);
     height: 48px;
     padding: 0px 16px;
     width: 160px;
@@ -204,7 +201,7 @@ $responsividade-média: 1260px;
 
 @mixin botão-geral{
     @include ícone();
-    background-color: $cor-terceária;
+    background-color: var(--cor-terceária);
     border-radius: 50%;
     padding: 8px;
 }
@@ -212,15 +209,15 @@ $responsividade-média: 1260px;
 @mixin botão-do-corpo{
     @include grid-em-linha();
     @include não-seleção();
-    background: $cor-quaternária;
+    background: var(--cor-quaternária);
     border: none;
     border-radius: 8px;
-    color: $cor-terceária;
+    color: var(--cor-terceária);
     column-gap: 0px;
     cursor: pointer;
-    font-family: $tipografia-botão-corpo-família;
-    font-size: $tipografia-botão-corpo-tamanho;
-    font-weight: $tipografia-botão-corpo-peso;
+    font-family: var(--tipografia-botão-corpo-família);
+    font-size: var(--tipografia-botão-corpo-tamanho);
+    font-weight: var(--tipografia-botão-corpo-peso);
     height: 48px;
     padding: 0px 16px;
 }
@@ -247,12 +244,12 @@ $responsividade-média: 1260px;
 @mixin input-de-email{
     @include não-seleção();
     background: none;
-    border: solid 1px $cor-quaternária;
+    border: solid 1px var(--cor-quaternária);
     border-radius: 8px;
-    color: $cor-quaternária-opaca;
-    font-family: $tipografia-placeholder-família;
-    font-size: $tipografia-placeholder-tamanho;
-    font-weight: $tipografia-placeholder-peso;
+    color: var(--cor-quaternária-opaca);
+    font-family: var(--tipografia-placeholder-família);
+    font-size: var(--tipografia-placeholder-tamanho);
+    font-weight: var(--tipografia-placeholder-peso);
     height: 48px;
     outline: none;
     padding: 0px 16px;
@@ -261,7 +258,7 @@ $responsividade-média: 1260px;
 
 @mixin ícone-input-de-email{
     @include ícone();
-    color: $cor-quaternária-opaca;
+    color: var(--cor-quaternária-opaca);
     position: absolute;
     right: 0px;
     top: 50%;

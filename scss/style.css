@@ -1,7 +1,44 @@
 @charset "UTF-8";
 /* --- Informações básicas: variáveis. */
-/* ------ Cores. */
-/* ------ Tipografia. */
+:root {
+  /* ------ Cores. */
+  --cor-primária: #D7CCC8;
+  --cor-secundária: #A69B97;
+  --cor-terceária: #FFFFFB;
+  --cor-quaternária: #171717;
+  --cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
+  /* ------ Tipografia. */
+  --tipografia-logo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-logo-tamanho: 24px;
+  --tipografia-logo-peso: bold;
+  --tipografia-endereços-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-endereços-tamanho: 12px;
+  --tipografia-endereços-peso: initial;
+  --tipografia-placeholder-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-placeholder-tamanho: 12px;
+  --tipografia-placeholder-peso: initial;
+  --tipografia-botão-cabeçalho-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-botão-cabeçalho-tamanho: 12px;
+  --tipografia-botão-cabeçalho-peso: initial;
+  --tipografia-botão-corpo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-botão-corpo-tamanho: 16px;
+  --tipografia-botão-corpo-peso: bold;
+  --tipografia-ícone-tamanho: 20px;
+  --tipografia-ícone-peso: initial;
+  --tipografia-título-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-título-tamanho: 48px;
+  --tipografia-título-peso: bold;
+  --tipografia-parágrafo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-parágrafo-tamanho: 32px;
+  --tipografia-parágrafo-peso: initial;
+  --tipografia-descrição-título-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-descrição-título-tamanho: 24px;
+  --tipografia-descrição-título-peso: bold;
+  --tipografia-descrição-parágrafo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-descrição-parágrafo-tamanho: 16px;
+  --tipografia-descrição-parágrafo-peso: initial;
+}
+
 /* ------ Resonsividade. */
 /* ------ @mixins de funcionais. */
 /* ------ @mixins tipográficos. */
@@ -10,7 +47,7 @@
 /* ------ @mixins do rodapé. */
 /* --- Código básico. */
 body {
-  background-color: #D7CCC8;
+  background-color: var(--cor-primária);
 }
 
 /* --- Cabeçalho. */
@@ -21,7 +58,7 @@ header {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
   height: 96px;
   padding: 16px 32px;
 }
@@ -31,10 +68,10 @@ header #header-logo h1 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-logo-família);
+  font-size: var(--tipografia-logo-tamanho);
+  font-weight: var(--tipografia-logo-peso);
 }
 header #header-endereços-pesquisa-perfil {
   align-items: center;
@@ -58,10 +95,10 @@ header #header-endereços-pesquisa-perfil #header-endereços-organização-padr�
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: initial;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-endereços-família);
+  font-size: var(--tipografia-endereços-tamanho);
+  font-weight: var(--tipografia-endereços-peso);
 }
 header #header-endereços-pesquisa-perfil #header-endereços-organização-responsiva {
   display: none;
@@ -75,13 +112,13 @@ header #header-endereços-pesquisa-perfil #header-área-de-busca input[type=text
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #FFFFFB;
+  background: var(--cor-terceária);
   border: none;
-  color: rgba(23, 23, 23, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
+  color: var(--cor-quaternária-opaca);
+  font-family: var(--tipografia-placeholder-família);
+  font-size: var(--tipografia-placeholder-tamanho);
   font-style: italic;
-  font-weight: initial;
+  font-weight: var(--tipografia-placeholder-peso);
   height: 48px;
   outline: none;
   padding: 0px 16px;
@@ -93,11 +130,11 @@ header #header-endereços-pesquisa-perfil #header-área-de-busca span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
-  color: rgba(23, 23, 23, 0.5);
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
+  color: var(--cor-quaternária-opaca);
   position: absolute;
   right: 0px;
   top: 50%;
@@ -116,14 +153,14 @@ header #header-endereços-pesquisa-perfil button {
   -ms-user-select: none;
   user-select: none;
   background: none;
-  border: solid 1px #171717;
-  color: #171717;
+  border: solid 1px var(--cor-quaternária);
+  color: var(--cor-quaternária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: initial;
+  font-family: var(--tipografia-botão-cabeçalho-família);
+  font-size: var(--tipografia-botão-cabeçalho-tamanho);
+  font-weight: var(--tipografia-botão-cabeçalho-peso);
   height: 48px;
   padding: 0px 16px;
   width: 160px;
@@ -134,10 +171,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
 }
 
 @media only screen and (max-width: 1260px) {
@@ -166,10 +203,10 @@ header #header-endereços-pesquisa-perfil button span {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: #171717;
+    color: var(--cor-quaternária);
     cursor: pointer;
-    font-size: 20px;
-    font-weight: initial;
+    font-size: var(--tipografia-ícone-tamanho);
+    font-weight: var(--tipografia-ícone-peso);
   }
   header #header-endereços-pesquisa-perfil #header-área-de-busca {
     display: none;
@@ -196,11 +233,11 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
-  background-color: #FFFFFB;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
+  background-color: var(--cor-terceária);
   border-radius: 50%;
   padding: 8px;
 }
@@ -211,12 +248,12 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  background-color: #FFFFFB;
+  background-color: var(--cor-terceária);
   border-radius: 100px;
   padding: 8px;
 }
 #main-botões-gerais #main-botões-interruptor span:first-child {
-  background-color: #D7CCC8;
+  background-color: var(--cor-primária);
 }
 #main-botões-gerais #ruído-entrada-inicial {
   background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
@@ -242,7 +279,7 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
   padding: 80px;
   text-align: start;
 }
@@ -265,10 +302,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-título-família);
+  font-size: var(--tipografia-título-tamanho);
+  font-weight: var(--tipografia-título-peso);
 }
 #main-entrada-inicial #main-entrada-inicial-informações p {
   -webkit-touch-callout: none;
@@ -276,10 +313,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
-  font-weight: initial;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-parágrafo-família);
+  font-size: var(--tipografia-parágrafo-tamanho);
+  font-weight: var(--tipografia-parágrafo-peso);
 }
 #main-entrada-inicial #main-entrada-inicial-informações button {
   align-items: center;
@@ -293,16 +330,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -312,12 +349,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 #main-entrada-inicial #main-entrada-inicial-gif {
   order: 2;
@@ -356,7 +393,7 @@ header #header-endereços-pesquisa-perfil button span {
   -o-object-fit: none;
      object-fit: none;
   width: 100%;
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
 }
 
 /* --- NewsLetter. */
@@ -367,7 +404,7 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
   padding: 80px;
   position: relative;
   text-align: end;
@@ -391,10 +428,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-título-família);
+  font-size: var(--tipografia-título-tamanho);
+  font-weight: var(--tipografia-título-peso);
 }
 #main-newsletter #main-newsletter-informações p {
   -webkit-touch-callout: none;
@@ -402,10 +439,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
-  font-weight: initial;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-parágrafo-família);
+  font-size: var(--tipografia-parágrafo-tamanho);
+  font-weight: var(--tipografia-parágrafo-peso);
 }
 #main-newsletter #main-newsletter-informações button {
   align-items: center;
@@ -419,16 +456,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -438,12 +475,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 #main-newsletter #main-newsletter-gif {
   order: 1;
@@ -484,7 +521,7 @@ header #header-endereços-pesquisa-perfil button span {
 }
 /* --- Carrossel de livros. */
 #main-carrossel-de-livros {
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
   padding: 80px 80px 0px 80px;
 }
 #main-carrossel-de-livros h2 {
@@ -493,10 +530,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-título-família);
+  font-size: var(--tipografia-título-tamanho);
+  font-weight: var(--tipografia-título-peso);
   margin-bottom: 80px;
   text-align: center;
 }
@@ -535,20 +572,20 @@ header #header-endereços-pesquisa-perfil button span {
   width: 160px;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro h3 {
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-descrição-título-família);
+  font-size: var(--tipografia-descrição-título-tamanho);
+  font-weight: var(--tipografia-descrição-título-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 160px;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro p {
-  color: rgba(23, 23, 23, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: initial;
+  color: var(--cor-quaternária-opaca);
+  font-family: var(--tipografia-descrição-parágrafo-família);
+  font-size: var(--tipografia-descrição-parágrafo-tamanho);
+  font-weight: var(--tipografia-descrição-parágrafo-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -566,16 +603,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -585,12 +622,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 #main-carrossel-de-livros .main-carrossel-botões {
   align-items: center;
@@ -608,13 +645,13 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
-  background-color: #171717;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
+  background-color: var(--cor-quaternária);
   border-radius: 50%;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   padding: 8px;
 }
 #main-carrossel-de-livros .main-carrossel-botões button {
@@ -629,16 +666,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -648,12 +685,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 
 /* --- Promoção. */
@@ -664,7 +701,7 @@ header #header-endereços-pesquisa-perfil button span {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
   padding: 80px;
   position: relative;
   text-align: start;
@@ -688,10 +725,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-título-família);
+  font-size: var(--tipografia-título-tamanho);
+  font-weight: var(--tipografia-título-peso);
 }
 #main-promoção #main-promoção-informações p {
   -webkit-touch-callout: none;
@@ -699,10 +736,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 32px;
-  font-weight: initial;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-parágrafo-família);
+  font-size: var(--tipografia-parágrafo-tamanho);
+  font-weight: var(--tipografia-parágrafo-peso);
 }
 #main-promoção #main-promoção-informações button {
   align-items: center;
@@ -716,16 +753,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -735,12 +772,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 #main-promoção #main-promoção-gif {
   order: 2;
@@ -781,7 +818,7 @@ header #header-endereços-pesquisa-perfil button span {
 }
 /* --- Carrossel de artigos. */
 #main-carrossel-de-artigos {
-  border-bottom: solid 1px #171717;
+  border-bottom: solid 1px var(--cor-quaternária);
   padding: 80px 80px 0px 80px;
 }
 #main-carrossel-de-artigos h2 {
@@ -790,10 +827,10 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-título-família);
+  font-size: var(--tipografia-título-tamanho);
+  font-weight: var(--tipografia-título-peso);
   margin-bottom: 80px;
   text-align: center;
 }
@@ -836,20 +873,20 @@ header #header-endereços-pesquisa-perfil button span {
   width: 480px;
 }
 #main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo h3 {
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-descrição-título-família);
+  font-size: var(--tipografia-descrição-título-tamanho);
+  font-weight: var(--tipografia-descrição-título-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 480px;
 }
 #main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo p {
-  color: rgba(23, 23, 23, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: initial;
+  color: var(--cor-quaternária-opaca);
+  font-family: var(--tipografia-descrição-parágrafo-família);
+  font-size: var(--tipografia-descrição-parágrafo-tamanho);
+  font-weight: var(--tipografia-descrição-parágrafo-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -867,16 +904,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -886,12 +923,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 #main-carrossel-de-artigos .main-carrossel-botões {
   align-items: center;
@@ -909,13 +946,13 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
-  background-color: #171717;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
+  background-color: var(--cor-quaternária);
   border-radius: 50%;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   padding: 8px;
 }
 #main-carrossel-de-artigos .main-carrossel-botões button {
@@ -930,16 +967,16 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -949,12 +986,12 @@ header #header-endereços-pesquisa-perfil button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 
 /* --- Rodapé. */
@@ -987,10 +1024,10 @@ footer #footer-inscrição-da-newsletter h2 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 48px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-título-família);
+  font-size: var(--tipografia-título-tamanho);
+  font-weight: var(--tipografia-título-peso);
 }
 footer #footer-inscrição-da-newsletter #footer-email-botão {
   align-items: center;
@@ -1010,12 +1047,12 @@ footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-e
   -ms-user-select: none;
   user-select: none;
   background: none;
-  border: solid 1px #171717;
+  border: solid 1px var(--cor-quaternária);
   border-radius: 8px;
-  color: rgba(23, 23, 23, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: initial;
+  color: var(--cor-quaternária-opaca);
+  font-family: var(--tipografia-placeholder-família);
+  font-size: var(--tipografia-placeholder-tamanho);
+  font-weight: var(--tipografia-placeholder-peso);
   height: 48px;
   outline: none;
   padding: 0px 16px;
@@ -1027,11 +1064,11 @@ footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-e
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
-  color: rgba(23, 23, 23, 0.5);
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
+  color: var(--cor-quaternária-opaca);
   position: absolute;
   right: 0px;
   top: 50%;
@@ -1049,16 +1086,16 @@ footer #footer-inscrição-da-newsletter #footer-email-botão button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: #171717;
+  background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--tipografia-botão-corpo-família);
+  font-size: var(--tipografia-botão-corpo-tamanho);
+  font-weight: var(--tipografia-botão-corpo-peso);
   height: 48px;
   padding: 0px 16px;
 }
@@ -1068,12 +1105,12 @@ footer #footer-inscrição-da-newsletter #footer-email-botão button span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   margin-left: 16px;
-  color: #FFFFFB;
+  color: var(--cor-terceária);
 }
 footer #footer-serviços-contatos {
   align-items: center;
@@ -1111,10 +1148,10 @@ footer #footer-serviços-contatos #footer-informações #footer-serviços h3 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-descrição-título-família);
+  font-size: var(--tipografia-descrição-título-tamanho);
+  font-weight: var(--tipografia-descrição-título-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1134,10 +1171,10 @@ footer #footer-serviços-contatos #footer-informações #footer-serviços li a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: initial;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-endereços-família);
+  font-size: var(--tipografia-endereços-tamanho);
+  font-weight: var(--tipografia-endereços-peso);
   justify-content: start;
 }
 footer #footer-serviços-contatos #footer-informações #footer-serviços li a span {
@@ -1146,10 +1183,10 @@ footer #footer-serviços-contatos #footer-informações #footer-serviços li a s
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
 }
 footer #footer-serviços-contatos #footer-informações #footer-serviços li:last-child {
   margin-bottom: 0px;
@@ -1172,10 +1209,10 @@ footer #footer-serviços-contatos #footer-informações #footer-contatos h3 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 24px;
-  font-weight: bold;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-descrição-título-família);
+  font-size: var(--tipografia-descrição-título-tamanho);
+  font-weight: var(--tipografia-descrição-título-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1192,10 +1229,10 @@ footer #footer-serviços-contatos #footer-informações #footer-contatos li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 12px;
-  font-weight: initial;
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-endereços-família);
+  font-size: var(--tipografia-endereços-tamanho);
+  font-weight: var(--tipografia-endereços-peso);
   justify-content: start;
   margin-bottom: 8px;
   -webkit-touch-callout: initial;
@@ -1210,10 +1247,10 @@ footer #footer-serviços-contatos #footer-informações #footer-contatos li span
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
   cursor: initial;
 }
 footer #footer-serviços-contatos #footer-informações #footer-contatos li:last-child {
@@ -1239,14 +1276,14 @@ footer #footer-direitos-autorais p {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: rgba(23, 23, 23, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  font-weight: initial;
+  color: var(--cor-quaternária-opaca);
+  font-family: var(--tipografia-descrição-parágrafo-família);
+  font-size: var(--tipografia-descrição-parágrafo-tamanho);
+  font-weight: var(--tipografia-descrição-parágrafo-peso);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #171717;
+  color: var(--cor-quaternária);
   justify-content: center;
 }
 footer #footer-direitos-autorais p span {
@@ -1255,11 +1292,11 @@ footer #footer-direitos-autorais p span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: #171717;
+  color: var(--cor-quaternária);
   cursor: pointer;
-  font-size: 20px;
-  font-weight: initial;
-  color: #171717;
+  font-size: var(--tipografia-ícone-tamanho);
+  font-weight: var(--tipografia-ícone-peso);
+  color: var(--cor-quaternária);
 }
 footer #papel {
   background-image: url("../Material-Gráfico/Gifs-de-Fundo/Papel.gif");

@@ -43,15 +43,11 @@
         <!-- ------ Botões gerais. -->
 
         <section id="main-botões-gerais">
-            <span class="material-icons-outlined">accessibility</span>
-            <span class="material-icons-outlined">translate</span>
+            <span class="material-icons-outlined" onclick="acessibilidade()">accessibility</span>
+            <span class="material-icons-outlined" onclick="tradutor()">translate</span>
             <section id="main-botões-interruptor">
-                <input type="checkbox" id="dark-mode" class="dark-mode">
-                <label for="dark-mode">
-                <span id="dark-mode" class="material-icons-outlined">dark_mode</span>
-                <input type="checkbox" id="light-mode" class="light-mode">
-                <label for="light-mode">
-                <span id="light-mode" class="material-icons-outlined">light_mode</span>
+                <span class="material-icons-outlined" onclick="modo_noturno()">dark_mode</span>
+                <span class="material-icons-outlined" onclick="modo_diurno()">light_mode</span>
             </section>
             <section id="ruído-entrada-inicial"></section>
         </section>

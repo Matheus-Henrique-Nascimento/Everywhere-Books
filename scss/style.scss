@@ -2,13 +2,13 @@
 
 /* --- Código básico. */
 
-body{background-color: $cor-primária;}
+body{background-color: var(--cor-primária);}
 
 /* --- Cabeçalho. */
 
 header{
     @include grid-em-linha();
-    border-bottom: solid 1px $cor-quaternária;
+    border-bottom: solid 1px var(--cor-quaternária);
     height: 96px;
     padding: 16px 32px;
 
@@ -68,11 +68,11 @@ header{
 
     #main-botões-interruptor{
         @include grid-em-linha();
-        background-color: $cor-terceária;
+        background-color: var(--cor-terceária);
         border-radius: 100px;
         padding: 8px;
 
-        span:first-child{background-color: $cor-primária;}
+        span:first-child{background-color: var(--cor-primária);}
     }
 
     #ruído-entrada-inicial{@include ruído();}
@@ -84,7 +84,7 @@ header{
 
 #main-entrada-inicial{
     @include grid-em-linha();
-    border-bottom: solid 1px $cor-quaternária;
+    border-bottom: solid 1px var(--cor-quaternária);
     padding: 80px;
     text-align: start;
 
@@ -106,7 +106,7 @@ header{
             span{
                 @include ícone();
                 margin-left: 16px;
-                color: $cor-terceária;
+                color: var(--cor-terceária);
             }
         }
     }
@@ -141,7 +141,7 @@ header{
     img{
         @include não-seleção();
         @include decoração-animada();
-        border-bottom: solid 1px $cor-quaternária;
+        border-bottom: solid 1px var(--cor-quaternária);
     }
 }
 
@@ -149,7 +149,7 @@ header{
 
 #main-newsletter{
     @include grid-em-linha();
-    border-bottom: solid 1px $cor-quaternária;
+    border-bottom: solid 1px var(--cor-quaternária);
     padding: 80px;
     position: relative;
     text-align: end;
@@ -172,7 +172,7 @@ header{
             span{
                 @include ícone();
                 margin-left: 16px;
-                color: $cor-terceária;
+                color: var(--cor-terceária);
             }
         }
     }
@@ -209,7 +209,7 @@ header{
 /* --- Carrossel de livros. */
 
 #main-carrossel-de-livros{
-    border-bottom: solid 1px $cor-quaternária;
+    border-bottom: solid 1px var(--cor-quaternária);
     padding: 80px 80px 0px 80px;
 
     h2{
@@ -252,7 +252,7 @@ header{
                 span{
                     @include ícone();
                     margin-left: 16px;
-                    color: $cor-terceária;
+                    color: var(--cor-terceária);
                 }
             }
         }
@@ -265,9 +265,9 @@ header{
 
         span{
             @include ícone();
-            background-color: $cor-quaternária;
+            background-color: var(--cor-quaternária);
             border-radius: 50%;
-            color: $cor-terceária;
+            color: var(--cor-terceária);
             padding: 8px;
         }
 
@@ -277,7 +277,7 @@ header{
             span{
                 @include ícone();
                 margin-left: 16px;
-                color: $cor-terceária;
+                color: var(--cor-terceária);
             }
         }
     }
@@ -287,7 +287,7 @@ header{
 
 #main-promoção{
     @include grid-em-linha();
-    border-bottom: solid 1px $cor-quaternária;
+    border-bottom: solid 1px var(--cor-quaternária);
     padding: 80px;
     position: relative;
     text-align: start;
@@ -310,7 +310,7 @@ header{
             span{
                 @include ícone();
                 margin-left: 16px;
-                color: $cor-terceária;
+                color: var(--cor-terceária);
             }
         }
     }
@@ -347,7 +347,7 @@ header{
 /* --- Carrossel de artigos. */
 
 #main-carrossel-de-artigos{
-    border-bottom: solid 1px $cor-quaternária;
+    border-bottom: solid 1px var(--cor-quaternária);
     padding: 80px 80px 0px 80px;
 
     h2{
@@ -393,7 +393,7 @@ header{
                 span{
                     @include ícone();
                     margin-left: 16px;
-                    color: $cor-terceária;
+                    color: var(--cor-terceária);
                 }
             }
         }
@@ -406,9 +406,9 @@ header{
 
         span{
             @include ícone();
-            background-color: $cor-quaternária;
+            background-color: var(--cor-quaternária);
             border-radius: 50%;
-            color: $cor-terceária;
+            color: var(--cor-terceária);
             padding: 8px;
         }
 
@@ -418,7 +418,7 @@ header{
             span{
                 @include ícone();
                 margin-left: 16px;
-                color: $cor-terceária;
+                color: var(--cor-terceária);
             }
         }
     }
@@ -455,7 +455,7 @@ footer{
                 span{
                     @include ícone();
                     margin-left: 16px;
-                    color: $cor-terceária;
+                    color: var(--cor-terceária);
                 }
             }
         }
@@ -542,12 +542,12 @@ footer{
             @include grid-em-linha();
             @include não-seleção();
             @include descrição-parágrafo();
-            color: $cor-quaternária;
+            color: var(--cor-quaternária);
             justify-content: center;
 
             span{
                 @include ícone();
-                color: $cor-quaternária;
+                color: var(--cor-quaternária);
             }
         }
     }
