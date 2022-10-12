@@ -114,7 +114,10 @@ header{
     #main-entrada-inicial-gif{
         order: 2;
 
-        img{height: 320px;}
+        img{
+            @include não-seleção();
+            height: 320px;
+        }
     }
 }
 
@@ -136,6 +139,7 @@ header{
     height: 320px;
 
     img{
+        @include não-seleção();
         @include decoração-animada();
         border-bottom: solid 1px $cor-quaternária;
     }
@@ -176,7 +180,10 @@ header{
     #main-newsletter-gif{
         order: 1;
 
-        img{height: 320px;}
+        img{
+            @include não-seleção();
+            height: 320px;
+        }
     }
 
     #ruído-newsletter{
@@ -223,6 +230,7 @@ header{
             text-align: center;
 
             img{
+                @include não-seleção();
                 object-fit: cover;
                 object-position: center center;
                 width: 160px;
@@ -310,7 +318,10 @@ header{
     #main-promoção-gif{
         order: 2;
 
-        img{height: 320px;}
+        img{
+            @include não-seleção();
+            height: 320px;
+        }
     }
 
     #ruído-promoção{
@@ -359,6 +370,7 @@ header{
             text-align: center;
 
             img{
+                @include não-seleção();
                 height: 320px;
                 object-fit: cover;
                 object-position: center center;
@@ -462,14 +474,25 @@ footer{
                 grid-auto-flow: row;
                 row-gap: 32px;
 
-                h3{@include descrição-título();}
+                h3{
+                    @include não-seleção();
+                    @include descrição-título();
+                }
 
-                a{
-                    @include grid-em-linha();
-                    @include links();
-                    justify-content: start;
+                li{
+                    margin-bottom: 8px;
 
-                    span{@include ícone();}
+                    a{
+                        @include grid-em-linha();
+                        @include links();
+                        justify-content: start;
+
+                        span{@include ícone();}
+                    }
+                }
+
+                li:last-child{
+                    margin-bottom: 0px;
                 }
             }
 
@@ -479,24 +502,45 @@ footer{
                 grid-auto-flow: row;
                 row-gap: 32px;
 
-                h3{@include descrição-título();}
+                h3{
+                    @include não-seleção();
+                    @include descrição-título();
+                }
 
                 li{
                     @include grid-em-linha();
                     @include links();
                     justify-content: start;
+                    margin-bottom: 8px;
+                    -webkit-touch-callout: initial; 
+                    -webkit-user-select: initial;
+                    -khtml-user-select: initial;
+                    -moz-user-select: initial;
+                    -ms-user-select: initial;
+                    user-select: initial;
 
-                    span{@include ícone();}
+                    span{
+                        @include ícone();
+                        cursor: initial;
+                    }
+                }
+
+                li:last-child{
+                    margin-bottom: 0px;
                 }
             }
         }
 
-        img{height: 320px;}
+        img{
+            @include não-seleção();
+            height: 320px;
+        }
     }
 
     #footer-direitos-autorais{
         p{
             @include grid-em-linha();
+            @include não-seleção();
             @include descrição-parágrafo();
             color: $cor-quaternária;
             justify-content: center;
