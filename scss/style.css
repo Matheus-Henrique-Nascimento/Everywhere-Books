@@ -6,7 +6,7 @@
   --cor-secundária: #A69B97;
   --cor-terceária: #FFFFFB;
   --cor-quaternária: #171717;
-  --cor-quaternária-opaca: rgba(23, 23, 23, 0.5);
+  --cor-quaternária-opaca: #17171780;
   /* ------ Tipografia. */
   --tipografia-logo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --tipografia-logo-tamanho: 24px;
@@ -252,7 +252,7 @@ header #header-endereços-pesquisa-perfil button span {
   border-radius: 100px;
   padding: 8px;
 }
-#main-botões-gerais #main-botões-interruptor span:first-child {
+#main-botões-gerais #main-botões-interruptor span:last-child {
   background-color: var(--cor-primária);
 }
 #main-botões-gerais #ruído-entrada-inicial {

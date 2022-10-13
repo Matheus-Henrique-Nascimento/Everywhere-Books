@@ -72,7 +72,7 @@ header{
         border-radius: 100px;
         padding: 8px;
 
-        span:first-child{background-color: var(--cor-primária);}
+        span:last-child{background-color: var(--cor-primária);}
     }
 
     #ruído-entrada-inicial{@include ruído();}
