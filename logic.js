@@ -9,19 +9,15 @@ function tradutor(){
 }
 
 function modo_noturno(){
-    var raiz = document.querySelector(":root");
-    raiz.style.setProperty("--cor-primária", "#D7CCC8");
-    raiz.style.setProperty("--cor-secundária", "#A69B97");
-    raiz.style.setProperty("--cor-terceária", "#FFFFFB");
-    raiz.style.setProperty("--cor-quaternária", "#171717");
-    raiz.style.setProperty("--cor-quaternária-opaca", "#17171780");
+    document.querySelector(":root").style.setProperty("--cor-primária", "#171717");
+    document.querySelector(":root").style.setProperty("--cor-terceária", "#333333");
+    document.querySelector(":root").style.setProperty("--cor-quaternária", "#A3A3A3");
+    document.querySelector(":root").style.setProperty("--cor-quaternária-opaca", "#A3A3A380");
 }
 
 function modo_diurno(){
-    var raiz = document.querySelector(":root");
-    raiz.style.setProperty("--cor-primária", "#D7CCC8");
-    raiz.style.setProperty("--cor-secundária", "#A69B97");
-    raiz.style.setProperty("--cor-terceária", "#FFFFFB");
-    raiz.style.setProperty("--cor-quaternária", "#171717");
-    raiz.style.setProperty("--cor-quaternária-opaca", "#17171780");
+    document.querySelector(":root").style.setProperty("--cor-primária", "#D7CCC8");
+    document.querySelector(":root").style.setProperty("--cor-terceária", "#FFFFFB");
+    document.querySelector(":root").style.setProperty("--cor-quaternária", "#171717");
+    document.querySelector(":root").style.setProperty("--cor-quaternária-opaca", "#17171780");
 }
