@@ -264,11 +264,6 @@ header #header-endereços-pesquisa-perfil button span {
   width: 100%;
   z-index: -1;
 }
-@media only screen and (max-width: 1260px) {
-  #main-botões-gerais #ruído-entrada-inicial {
-    height: 903px;
-  }
-}
 
 /* --- Entrada inicial. */
 #main-entrada-inicial {

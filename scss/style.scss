@@ -76,8 +76,6 @@ header{
     }
 
     #ruído-entrada-inicial{@include ruído();}
-
-    @media only screen and (max-width: $responsividade-média){#ruído-entrada-inicial{height: calc(84px + 819px);}}
 }
 
 /* --- Entrada inicial. */
