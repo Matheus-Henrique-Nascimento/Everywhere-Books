@@ -199,8 +199,6 @@ header{
         text-align: center;
 
         #main-newsletter-informações{button{justify-self: center;}}
-
-        #ruído-newsletter{ height: 852px;}
     }
 }
 
@@ -337,8 +335,6 @@ header{
         text-align: center;
 
         #main-promoção-informações{button{justify-self: center;}}
-
-        #ruído-promoção{height: 884px;}
     }
 }
 
@@ -562,6 +558,8 @@ footer{
             justify-content: center;
             row-gap: 32px;
 
+            h2{text-align: center;}
+
             #footer-email-botão{
                 #footer-área-do-email{input[type="text"]{width: 560px;}}
             }
@@ -571,7 +569,42 @@ footer{
             grid-auto-flow: row;
             justify-content: center;
         }
+    }
+}
 
-        #papel{height: 924px;}
+@media only screen and (max-width: $responsividade-pequena){
+    footer{
+        #footer-inscrição-da-newsletter{
+            grid-auto-flow: row;
+            justify-content: center;
+            row-gap: 32px;
+
+            #footer-email-botão{
+                grid-auto-flow: row;
+                justify-content: center;
+                row-gap: 16px;
+                #footer-área-do-email{input[type="text"]{width: 250px;}}
+            }
+        }
+
+        #footer-serviços-contatos{
+            grid-auto-flow: row;
+            justify-items: center;
+
+            #footer-informações{
+                grid-auto-flow: row;
+                row-gap: 32px;
+
+                #footer-serviços{
+                    justify-content: center;
+                }
+                
+                #footer-contatos{
+                    justify-items: center;
+
+                    li{justify-content: center;}
+                }
+            }
+        }
     }
 }

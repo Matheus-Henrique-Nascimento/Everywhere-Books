@@ -256,7 +256,6 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-botões-gerais #ruído-entrada-inicial {
   background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
-  height: 580px;
   left: 0px;
   mix-blend-mode: soft-light;
   position: absolute;
@@ -489,7 +488,6 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-newsletter #ruído-newsletter {
   background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
-  height: 580px;
   left: 0px;
   mix-blend-mode: soft-light;
   position: absolute;
@@ -508,9 +506,6 @@ header #header-endereços-pesquisa-perfil button span {
   }
   #main-newsletter #main-newsletter-informações button {
     justify-self: center;
-  }
-  #main-newsletter #ruído-newsletter {
-    height: 852px;
   }
 }
 /* --- Carrossel de livros. */
@@ -786,7 +781,6 @@ header #header-endereços-pesquisa-perfil button span {
 }
 #main-promoção #ruído-promoção {
   background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
-  height: 580px;
   left: 0px;
   mix-blend-mode: soft-light;
   position: absolute;
@@ -805,9 +799,6 @@ header #header-endereços-pesquisa-perfil button span {
   }
   #main-promoção #main-promoção-informações button {
     justify-self: center;
-  }
-  #main-promoção #ruído-promoção {
-    height: 884px;
   }
 }
 /* --- Carrossel de artigos. */
@@ -1294,7 +1285,6 @@ footer #footer-direitos-autorais p span {
 }
 footer #papel {
   background-image: url("../Material-Gráfico/Gifs-de-Fundo/Papel.gif");
-  height: 708px;
   left: 0px;
   mix-blend-mode: soft-light;
   position: absolute;
@@ -1310,6 +1300,9 @@ footer #papel {
     justify-content: center;
     row-gap: 32px;
   }
+  footer #footer-inscrição-da-newsletter h2 {
+    text-align: center;
+  }
   footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-email input[type=text] {
     width: 560px;
   }
@@ -1317,7 +1310,36 @@ footer #papel {
     grid-auto-flow: row;
     justify-content: center;
   }
-  footer #papel {
-    height: 924px;
+}
+@media only screen and (max-width: 800px) {
+  footer #footer-inscrição-da-newsletter {
+    grid-auto-flow: row;
+    justify-content: center;
+    row-gap: 32px;
+  }
+  footer #footer-inscrição-da-newsletter #footer-email-botão {
+    grid-auto-flow: row;
+    justify-content: center;
+    row-gap: 16px;
+  }
+  footer #footer-inscrição-da-newsletter #footer-email-botão #footer-área-do-email input[type=text] {
+    width: 250px;
+  }
+  footer #footer-serviços-contatos {
+    grid-auto-flow: row;
+    justify-items: center;
+  }
+  footer #footer-serviços-contatos #footer-informações {
+    grid-auto-flow: row;
+    row-gap: 32px;
+  }
+  footer #footer-serviços-contatos #footer-informações #footer-serviços {
+    justify-content: center;
+  }
+  footer #footer-serviços-contatos #footer-informações #footer-contatos {
+    justify-items: center;
+  }
+  footer #footer-serviços-contatos #footer-informações #footer-contatos li {
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */

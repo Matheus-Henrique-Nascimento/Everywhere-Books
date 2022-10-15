@@ -53,6 +53,7 @@
 /* ------ Resonsividade. */
 
 $responsividade-média: 1260px;
+$responsividade-pequena: 800px;
 
 /* ------ @mixins de funcionais. */
 
@@ -189,7 +190,6 @@ $responsividade-média: 1260px;
 
 @mixin ruído{
     background-image: url("../Material-Gráfico/Gifs-de-Fundo/Ruído.gif");
-    height: calc(84px + 496px);
     left: 0px;
     mix-blend-mode: soft-light;
     position: absolute;
@@ -231,7 +231,6 @@ $responsividade-média: 1260px;
 
 @mixin papel{
     background-image: url("../Material-Gráfico/Gifs-de-Fundo/Papel.gif");
-    height: 708px;
     left: 0px;
     mix-blend-mode: soft-light;
     position: absolute;
