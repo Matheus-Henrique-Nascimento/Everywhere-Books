@@ -3,10 +3,26 @@
 /* ------ Acessibilidade. */
 
 function acessibilidade(){
+    /* ------ Largura das telas. */
+
     document.querySelector("#main-entrada-inicial-informações").style.width = "100%";
     document.querySelector("#main-newsletter-informações").style.width = "100%";
     document.querySelector("#main-promoção-informações").style.width = "100%";
-    
+
+    /* ------ Centralização das telas. */
+
+    document.querySelector("#main-entrada-inicial").style.textAlign = "center";
+    document.querySelector("#main-entrada-inicial-informações").style.justifyItems = "center";
+
+    document.querySelector("#main-newsletter").style.textAlign = "center";
+    document.querySelector("#main-newsletter-informações").style.justifyItems = "center";
+
+    document.querySelector("#main-promoção").style.textAlign = "center";
+    document.querySelector("#main-promoção-informações").style.justifyItems = "center";
+
+    /* ------ Aumento dos valores tipográficos básicos. */
+
+    /* ------ Funções invocadas. */
 
     exclusão_de_gifs()
 }
@@ -23,30 +39,14 @@ function exclusão_de_gifs(){
 /* ------ Altura responsiva dos efeitos. */
 
 window.addEventListener('load', (event) => {
-    setInterval(ruído_e_papel, 10);
+    setInterval(efeitos, 10);
 });
 
-function ruído_e_papel(){
-    ruído_entrada_inicial();
-    ruído_newsletter();
-    ruído_promoção();
-    pepel();
-}
-
-function ruído_entrada_inicial(){
-    return document.querySelector("#ruído-entrada-inicial").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-botões-gerais")).height) + parseInt(window.getComputedStyle(document.querySelector("#main-entrada-inicial")).height)}px`;
-}
-
-function ruído_newsletter(){
-    return document.querySelector("#ruído-newsletter").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-newsletter")).height)}px`;
-}
-
-function ruído_promoção(){
-    return document.querySelector("#ruído-promoção").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-promoção")).height)}px`;
-}
-
-function pepel(){
-    return document.querySelector("#papel").style.height = `${parseInt(window.getComputedStyle(document.querySelector("footer")).height)}px`;
+function efeitos(){
+    document.querySelector("#ruído-entrada-inicial").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-botões-gerais")).height) + parseInt(window.getComputedStyle(document.querySelector("#main-entrada-inicial")).height)}px`;
+    document.querySelector("#ruído-newsletter").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-newsletter")).height)}px`;
+    document.querySelector("#ruído-promoção").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-promoção")).height)}px`;
+    document.querySelector("#papel").style.height = `${parseInt(window.getComputedStyle(document.querySelector("footer")).height)}px`;
 }
 
 /* ------ Tradução. */
