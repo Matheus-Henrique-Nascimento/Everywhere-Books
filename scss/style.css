@@ -19,11 +19,6 @@
   --tipografia-botão-cabeçalho-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --tipografia-botão-cabeçalho-tamanho: 12px;
   --tipografia-botão-cabeçalho-peso: initial;
-  --tipografia-botão-corpo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  --tipografia-botão-corpo-tamanho: 16px;
-  --tipografia-botão-corpo-peso: bold;
-  --tipografia-ícone-tamanho: 20px;
-  --tipografia-ícone-peso: initial;
   --tipografia-título-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --tipografia-título-tamanho: 48px;
   --tipografia-título-peso: bold;
@@ -36,6 +31,11 @@
   --tipografia-descrição-parágrafo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --tipografia-descrição-parágrafo-tamanho: 16px;
   --tipografia-descrição-parágrafo-peso: initial;
+  --tipografia-botão-corpo-família: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --tipografia-botão-corpo-tamanho: 16px;
+  --tipografia-botão-corpo-peso: bold;
+  --tipografia-ícone-tamanho: 20px;
+  --tipografia-ícone-peso: initial;
 }
 
 /* ------ Resonsividade. */
@@ -153,16 +153,18 @@ header #header-endereços-pesquisa-perfil button {
   user-select: none;
   background: none;
   border: solid 1px var(--cor-quaternária);
-  color: var(--cor-quaternária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
-  font-family: var(--tipografia-botão-cabeçalho-família);
-  font-size: var(--tipografia-botão-cabeçalho-tamanho);
-  font-weight: var(--tipografia-botão-cabeçalho-peso);
   height: 48px;
   padding: 0px 16px;
   width: 160px;
+}
+header #header-endereços-pesquisa-perfil button a {
+  color: var(--cor-quaternária);
+  font-family: var(--tipografia-botão-cabeçalho-família);
+  font-size: var(--tipografia-botão-cabeçalho-tamanho);
+  font-weight: var(--tipografia-botão-cabeçalho-peso);
 }
 header #header-endereços-pesquisa-perfil button span {
   -webkit-touch-callout: none;
@@ -326,15 +328,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-entrada-inicial #main-entrada-inicial-informações button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-entrada-inicial #main-entrada-inicial-informações button span {
   -webkit-touch-callout: none;
@@ -452,15 +456,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-newsletter #main-newsletter-informações button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-newsletter #main-newsletter-informações button span {
   -webkit-touch-callout: none;
@@ -595,15 +601,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-carrossel-de-livros #main-carrossel-área-dos-livros .main-carrossel-livro button span {
   -webkit-touch-callout: none;
@@ -658,15 +666,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-livros .main-carrossel-botões button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-carrossel-de-livros .main-carrossel-botões button span {
   -webkit-touch-callout: none;
@@ -745,15 +755,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-promoção #main-promoção-informações button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-promoção #main-promoção-informações button span {
   -webkit-touch-callout: none;
@@ -892,15 +904,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-carrossel-de-artigos #main-carrossel-área-dos-artigos .main-carrossel-artigo button span {
   -webkit-touch-callout: none;
@@ -955,15 +969,17 @@ header #header-endereços-pesquisa-perfil button span {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+#main-carrossel-de-artigos .main-carrossel-botões button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 #main-carrossel-de-artigos .main-carrossel-botões button span {
   -webkit-touch-callout: none;
@@ -1074,15 +1090,17 @@ footer #footer-inscrição-da-newsletter #footer-email-botão button {
   background: var(--cor-quaternária);
   border: none;
   border-radius: 8px;
-  color: var(--cor-terceária);
   -moz-column-gap: 0px;
        column-gap: 0px;
   cursor: pointer;
+  height: 48px;
+  padding: 0px 16px;
+}
+footer #footer-inscrição-da-newsletter #footer-email-botão button a {
+  color: var(--cor-terceária);
   font-family: var(--tipografia-botão-corpo-família);
   font-size: var(--tipografia-botão-corpo-tamanho);
   font-weight: var(--tipografia-botão-corpo-peso);
-  height: 48px;
-  padding: 0px 16px;
 }
 footer #footer-inscrição-da-newsletter #footer-email-botão button span {
   -webkit-touch-callout: none;

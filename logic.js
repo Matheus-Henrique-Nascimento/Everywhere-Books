@@ -20,11 +20,24 @@ function acessibilidade(){
     document.querySelector("#main-promoção").style.textAlign = "center";
     document.querySelector("#main-promoção-informações").style.justifyItems = "center";
 
-    /* ------ Aumento dos valores tipográficos básicos. */
+    /* ------ Aumento des valores tipográficos e estilísticos. */
+
+    document.querySelector("header").style.height = "124px";
+    document.querySelector(":root").style.setProperty("--tipografia-logo-tamanho", "32px");
+    document.querySelector(":root").style.setProperty("--tipografia-endereços-tamanho", "16px");
+    document.querySelector(":root").style.setProperty("--tipografia-botão-cabeçalho-tamanho", "24px");
+    document.querySelector("#header-endereços-pesquisa-perfil").querySelector("button").querySelector("a").innerHTML = "Conta";
+    document.querySelector(":root").style.setProperty("--tipografia-título-tamanho", "64px");
+    document.querySelector(":root").style.setProperty("--tipografia-parágrafo-tamanho", "48px");
+    document.querySelector(":root").style.setProperty("--tipografia-botão-corpo-tamanho", "24px");
+    document.querySelector(":root").style.setProperty("--tipografia-descrição-título-tamanho", "32px");
+    document.querySelector(":root").style.setProperty("--tipografia-descrição-parágrafo-tamanho", "24px");
+    document.querySelector(":root").style.setProperty("--tipografia-ícone-tamanho", "32px");
 
     /* ------ Funções invocadas. */
 
-    exclusão_de_gifs()
+    exclusão_de_gifs();
+    expansão();
 }
 
 /* ------ Exclusão de GIFs. */
@@ -33,6 +46,18 @@ function exclusão_de_gifs(){
     var gif = document.querySelectorAll(".gif");
     gif.forEach(gif => {
         gif.style.display = "none";
+    })
+}
+
+function expansão(){
+    var botão = document.querySelectorAll("button");
+    botão.forEach(botão => {
+        botão.style.height = "64px";
+    })
+
+    var input = document.querySelectorAll("input");
+    input.forEach(input => {
+        input.style.height = "64px";
     })
 }
 

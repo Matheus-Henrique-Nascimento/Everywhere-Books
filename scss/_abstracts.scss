@@ -26,13 +26,6 @@
     --tipografia-botão-cabeçalho-tamanho: 12px;
     --tipografia-botão-cabeçalho-peso: initial;
 
-    --tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --tipografia-botão-corpo-tamanho: 16px;
-    --tipografia-botão-corpo-peso: bold;
-
-    --tipografia-ícone-tamanho: 20px;
-    --tipografia-ícone-peso: initial;
-
     --tipografia-título-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --tipografia-título-tamanho: 48px;
     --tipografia-título-peso: bold;
@@ -48,6 +41,13 @@
     --tipografia-descrição-parágrafo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --tipografia-descrição-parágrafo-tamanho: 16px;
     --tipografia-descrição-parágrafo-peso: initial;
+
+    --tipografia-botão-corpo-família: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --tipografia-botão-corpo-tamanho: 16px;
+    --tipografia-botão-corpo-peso: bold;
+
+    --tipografia-ícone-tamanho: 20px;
+    --tipografia-ícone-peso: initial;
 }
 
 /* ------ Resonsividade. */
@@ -175,15 +175,17 @@ $responsividade-pequena: 800px;
     @include não-seleção();
     background: none;
     border: solid 1px var(--cor-quaternária);
-    color: var(--cor-quaternária);
     column-gap: 0px;
     cursor: pointer;
-    font-family: var(--tipografia-botão-cabeçalho-família);
-    font-size: var(--tipografia-botão-cabeçalho-tamanho);
-    font-weight: var(--tipografia-botão-cabeçalho-peso);
     height: 48px;
     padding: 0px 16px;
     width: 160px;
+    a{
+        color: var(--cor-quaternária);
+        font-family: var(--tipografia-botão-cabeçalho-família);
+        font-size: var(--tipografia-botão-cabeçalho-tamanho);
+        font-weight: var(--tipografia-botão-cabeçalho-peso);
+    }
 }
 
 /* ------ @mixins do corpo. */
@@ -211,14 +213,16 @@ $responsividade-pequena: 800px;
     background: var(--cor-quaternária);
     border: none;
     border-radius: 8px;
-    color: var(--cor-terceária);
     column-gap: 0px;
     cursor: pointer;
-    font-family: var(--tipografia-botão-corpo-família);
-    font-size: var(--tipografia-botão-corpo-tamanho);
-    font-weight: var(--tipografia-botão-corpo-peso);
     height: 48px;
     padding: 0px 16px;
+    a{
+        color: var(--cor-terceária);
+        font-family: var(--tipografia-botão-corpo-família);
+        font-size: var(--tipografia-botão-corpo-tamanho);
+        font-weight: var(--tipografia-botão-corpo-peso);
+    }
 }
 
 @mixin decoração-animada{
