@@ -35,6 +35,8 @@ function acessibilidade(){
         document.querySelector(":root").style.setProperty("--tipografia-descrição-parágrafo-tamanho", "24px");
         document.querySelector(":root").style.setProperty("--tipografia-botão-corpo-tamanho", "24px");
         document.querySelector(":root").style.setProperty("--tipografia-ícone-tamanho", "32px");
+        document.querySelector("#main-botões-gerais").querySelectorAll(".material-icons-outlined")[0].style.color = "var(--cor-primária)";
+
 
         /* ------ Exclusão de GIFs. */
 
@@ -94,6 +96,7 @@ function acessibilidade(){
         document.querySelector(":root").style.setProperty("--tipografia-descrição-parágrafo-tamanho", "16px");
         document.querySelector(":root").style.setProperty("--tipografia-botão-corpo-tamanho", "16px");
         document.querySelector(":root").style.setProperty("--tipografia-ícone-tamanho", "20px");
+        document.querySelector("#main-botões-gerais").querySelectorAll(".material-icons-outlined")[0].style.color = "var(--cor-quaternária)";
 
         /* ------ Exclusão de GIFs. */
 
