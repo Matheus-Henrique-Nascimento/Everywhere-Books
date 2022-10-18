@@ -57,7 +57,6 @@ body i::after {
           animation: piscar 0.5s infinite;
   color: #FF8800;
   content: "|";
-  margin-left: 4px;
   opacity: 1;
 }
 @-webkit-keyframes piscar {
