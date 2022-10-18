@@ -48,6 +48,34 @@
 body {
   background-color: var(--cor-primária);
 }
+body i {
+  color: #FF8800;
+  font-style: italic;
+}
+body i::after {
+  -webkit-animation: piscar 0.5s infinite;
+          animation: piscar 0.5s infinite;
+  color: #FF8800;
+  content: "|";
+  margin-left: 4px;
+  opacity: 1;
+}
+@-webkit-keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes piscar {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 
 /* --- Cabeçalho. */
 header {

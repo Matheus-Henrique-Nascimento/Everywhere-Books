@@ -2,7 +2,29 @@
 
 /* --- Código básico. */
 
-body{background-color: var(--cor-primária);}
+body{
+    background-color: var(--cor-primária); 
+    i{
+        color: #FF8800;
+        font-style: italic;
+        &::after{
+            animation: piscar 0.5s infinite;
+            color: #FF8800;
+            content: "|";
+            margin-left: 4px;
+            opacity: 1;
+
+            @keyframes piscar{
+                0%, 100%{
+                    opacity: 1;
+                }
+                50%{
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
 
 /* --- Cabeçalho. */
 

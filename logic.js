@@ -3,10 +3,10 @@
 /* ------ Altura responsiva dos efeitos. */
 
 window.addEventListener('load', (event) => {
-    setInterval(efeitos, 10);
+    setInterval(efeitos_ruídos_papel, 10);
 });
 
-function efeitos(){
+function efeitos_ruídos_papel(){
     document.querySelector("#ruído-entrada-inicial").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-botões-gerais")).height) + parseInt(window.getComputedStyle(document.querySelector("#main-entrada-inicial")).height)}px`;
     document.querySelector("#ruído-newsletter").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-newsletter")).height)}px`;
     document.querySelector("#ruído-promoção").style.height = `${parseInt(window.getComputedStyle(document.querySelector("#main-promoção")).height)}px`;
@@ -39,4 +39,16 @@ function modo_diurno(){
 
     document.querySelector("#main-botões-interruptor").querySelectorAll(".material-icons-outlined")[1].style.backgroundColor = "var(--cor-primária)";
     document.querySelector("#main-botões-interruptor").querySelectorAll(".material-icons-outlined")[0].style.backgroundColor = "var(--cor-terceária)";
+}
+
+window.addEventListener('load', (event) => {
+    máquina_de_escrever();
+});
+
+function máquina_de_escrever(){
+    const texto = document.querySelector("#main-entrada-inicial-informações").querySelector("h2").querySelector("i").textContent.split("");
+    document.querySelector("#main-entrada-inicial-informações").querySelector("h2").querySelector("i").innerHTML = "";
+    texto.forEach((letra, i) => {
+        setTimeout(() => document.querySelector("#main-entrada-inicial-informações").querySelector("h2").querySelector("i").innerHTML += letra, 500 * i);
+    });
 }
