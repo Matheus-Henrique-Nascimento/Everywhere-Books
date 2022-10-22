@@ -4,8 +4,8 @@ Link para o site [link to the website]: https://matheus-henrique-nascimento.gith
 
 pt-br:
 
-Um projeto onde exercito minhas habilidades em HTML, CSS, SASS, Git e Javascript. O design também é meu — mas os GIFs não.
+Um projeto onde exercito minhas habilidades em HTML, CSS, SASS, Git e Javascript. O design também é meu — mas os GIFs e ilustrações não.
 
 en-us:
 
-A project where I exercise my skills in HTML, CSS, SASS, Git, and Javascript. The design is mine too — but not the GIFs.
+A project where I exercise my skills in HTML, CSS, SASS, Git, and Javascript. t
