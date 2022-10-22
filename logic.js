@@ -11,12 +11,6 @@ window.addEventListener('load', () => {
     }, 10);
 });
 
-/* ------ Tradução. */
-
-function tradutor(){
-    window.alert("Aqui haverá a tradução do site.");
-}
-
 /* ------ Interruptor de cores. */
 
 function modo_noturno(){
@@ -42,6 +36,8 @@ function modo_diurno(){
 window.addEventListener('load', (event) => {
     máquina_de_escrever();
 });
+
+/* ------ Efeito de texto. */
 
 function máquina_de_escrever(){
     const texto_entrada_inicial = document.querySelector("#main-entrada-inicial-informações").querySelector("h2").querySelector("i").textContent.split("");

@@ -175,17 +175,15 @@ $responsividade-pequena: 800px;
     @include não-seleção();
     background: none;
     border: solid 1px var(--cor-quaternária);
+    color: var(--cor-quaternária);
     column-gap: 0px;
     cursor: pointer;
+    font-family: var(--tipografia-botão-cabeçalho-família);
+    font-size: var(--tipografia-botão-cabeçalho-tamanho);
+    font-weight: var(--tipografia-botão-cabeçalho-peso);
     height: 48px;
     padding: 0px 16px;
     width: 160px;
-    a{
-        color: var(--cor-quaternária);
-        font-family: var(--tipografia-botão-cabeçalho-família);
-        font-size: var(--tipografia-botão-cabeçalho-tamanho);
-        font-weight: var(--tipografia-botão-cabeçalho-peso);
-    }
 }
 
 /* ------ @mixins do corpo. */
@@ -213,16 +211,14 @@ $responsividade-pequena: 800px;
     background: var(--cor-quaternária);
     border: none;
     border-radius: 8px;
+    color: var(--cor-terceária);
     column-gap: 0px;
     cursor: pointer;
+    font-family: var(--tipografia-botão-corpo-família);
+    font-size: var(--tipografia-botão-corpo-tamanho);
+    font-weight: var(--tipografia-botão-corpo-peso);
     height: 48px;
     padding: 0px 16px;
-    a{
-        color: var(--cor-terceária);
-        font-family: var(--tipografia-botão-corpo-família);
-        font-size: var(--tipografia-botão-corpo-tamanho);
-        font-weight: var(--tipografia-botão-corpo-peso);
-    }
 }
 
 @mixin decoração-animada{
